@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - De Cyber Consultant</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+            margin: 0;
+            padding: 0;
+            background-color: #f4f7f6;
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+            padding-top: 40px;
+            box-sizing: border-box;
+        }
+        .container {
+            width: 90%;
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+        }
+        header h1 {
+            color: #2c3e50;
+            text-align: center;
+            margin-bottom: 40px;
+            font-size: 2.5em;
+            font-weight: 300;
+        }
+        .contact-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            justify-content: center;
+        }
+        .contact-card {
+            background-color: #ffffff;
+            border-radius: 12px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+            padding: 25px 30px;
+            width: 100%;
+            max-width: 350px;
+            box-sizing: border-box;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .contact-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+        }
+        .contact-card h2 {
+            color: #3498db;
+            margin-top: 0;
+            margin-bottom: 15px;
+            font-size: 1.8em;
+            font-weight: 500;
+            border-bottom: 2px solid #ecf0f1;
+            padding-bottom: 10px;
+        }
+        .contact-card ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .contact-card ul li {
+            margin-bottom: 12px;
+            font-size: 1.1em;
+            color: #555;
+            display: flex;
+            align-items: center;
+        }
+        .contact-card ul li strong {
+            color: #34495e;
+            margin-right: 8px;
+            font-weight: 500;
+            min-width: 60px; /* Ensures alignment */
+        }
+        .contact-card ul li a {
+            color: #3498db;
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+        .contact-card ul li a:hover {
+            color: #2980b9;
+            text-decoration: underline;
+        }
+        /* Simple icons (could be replaced with SVGs or icon font for more polish) */
+        .contact-card ul li strong::before {
+            content: '';
+            display: inline-block;
+            width: 16px;
+            height: 16px;
+            margin-right: 8px;
+            background-size: contain;
+            background-repeat: no-repeat;
+            vertical-align: middle;
+        }
+        .contact-card ul li strong.phone::before {
+            /* Placeholder for phone icon, using a simple character for now */
+            content: '📞'; /* Or use a proper icon */
+            font-size: 1em;
+        }
+        .contact-card ul li strong.email::before {
+            /* Placeholder for email icon */
+            content: '📧'; /* Or use a proper icon */
+            font-size: 1em;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 50px;
+            padding: 20px;
+            color: #7f8c8d;
+            font-size: 0.9em;
+        }
+
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2em;
+            }
+            .contact-card {
+                max-width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Contact Us</h1>
+        </header>
+
+        <div class="contact-grid">
+            <div class="contact-card">
+                <h2>Lev Ankone</h2>
+                <ul>
+                    <li><strong class="phone">Phone:</strong> <a href="tel:+31648512059">+31 6 48512059</a></li>
+                    <li><strong class="email">Email:</strong> <a href="mailto:l.ankone@decyberconsultant.nl">l.ankone@decyberconsultant.nl</a></li>
+                </ul>
+            </div>
+
+            <div class="contact-card">
+                <h2>Melle Jorna</h2>
+                <ul>
+                    <li><strong class="phone">Phone:</strong> <a href="tel:+31641289756">+31 6 41289756</a></li>
+                    <li><strong class="email">Email:</strong> <a href="mailto:m.jorna@decyberconsultant.nl">m.jorna@decyberconsultant.nl</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <footer>
+            <p>&copy; 2024 De Cyber Consultant. All rights reserved.</p>
+        </footer>
+    </div>
+</body>
+</html>
