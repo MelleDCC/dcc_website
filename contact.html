@@ -1,159 +1,213 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="nl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Us - De Cyber Consultant</title>
+    <title>Contact - De CyberConsultant</title>
     <style>
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap');
+
+        * {
             margin: 0;
             padding: 0;
-            background-color: #f4f7f6;
-            color: #333;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Inter', system-ui, sans-serif;
+            min-height: 100vh;
+            background: #000;
+            color: #f5f5f7;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
             display: flex;
             flex-direction: column;
             align-items: center;
-            min-height: 100vh;
-            padding-top: 40px;
-            box-sizing: border-box;
+            padding-top: 100px; /* Space for fixed nav */
         }
-        .container {
-            width: 90%;
-            max-width: 800px;
-            margin: 20px auto;
-            padding: 20px;
-        }
-        header h1 {
-            color: #2c3e50;
-            text-align: center;
-            margin-bottom: 40px;
-            font-size: 2.5em;
-            font-weight: 300;
-        }
-        .contact-grid {
+
+        .dashboard-nav {
+            position: fixed;
+            top: 2rem;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(15, 15, 15, 0.85); /* Slightly more opaque for readability */
+            backdrop-filter: blur(15px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 50px;
+            padding: 0.8rem 1.5rem; /* Adjusted padding */
             display: flex;
-            flex-wrap: wrap;
-            gap: 30px;
+            align-items: center;
+            gap: 1.5rem; /* Adjusted gap */
+            z-index: 1000;
+            font-family: 'JetBrains Mono', monospace;
+        }
+
+        .nav-link {
+            color: #a1a1a6; /* Softer color */
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: color 0.3s ease;
+            padding: 0.3rem 0.5rem;
+            border-radius: 8px;
+        }
+
+        .nav-link:hover {
+            color: #007aff;
+            background-color: rgba(255, 255, 255, 0.05);
+        }
+        
+        .nav-title {
+            color: #f5f5f7;
+            font-weight: 600;
+            font-size: 1rem;
+        }
+
+        .contact-container {
+            width: 100%;
+            max-width: 900px;
+            padding: 2rem;
+            text-align: center;
+        }
+
+        .page-title {
+            font-size: 2.8rem;
+            font-weight: 700;
+            color: #f5f5f7;
+            margin-bottom: 1rem;
+            letter-spacing: -1px;
+        }
+        
+        .page-subtitle {
+            font-size: 1.1rem;
+            color: #86868b;
+            margin-bottom: 3rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.6;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
             justify-content: center;
         }
+
         .contact-card {
-            background-color: #ffffff;
-            border-radius: 12px;
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
-            padding: 25px 30px;
-            width: 100%;
-            max-width: 350px;
-            box-sizing: border-box;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            background: rgba(255, 255, 255, 0.03); /* Darker, more subtle */
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 16px; /* More rounded */
+            padding: 2rem;
+            text-align: left;
+            transition: all 0.3s cubic-bezier(0.25, 0.1, 0.25, 1);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
         }
+
         .contact-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+            transform: translateY(-5px) scale(1.02);
+            background: rgba(255, 255, 255, 0.05);
+            border-color: rgba(255, 255, 255, 0.12);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.2);
         }
-        .contact-card h2 {
-            color: #3498db;
-            margin-top: 0;
-            margin-bottom: 15px;
-            font-size: 1.8em;
-            font-weight: 500;
-            border-bottom: 2px solid #ecf0f1;
-            padding-bottom: 10px;
+
+        .contact-card h3 {
+            font-size: 1.75rem; /* Larger name */
+            font-weight: 600;
+            margin-bottom: 1.5rem; /* More space */
+            color: #f5f5f7;
         }
-        .contact-card ul {
-            list-style: none;
-            padding: 0;
-            margin: 0;
+        
+        .contact-card .ai-name {
+             background: linear-gradient(135deg, #007aff, #5ac8fa);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
-        .contact-card ul li {
-            margin-bottom: 12px;
-            font-size: 1.1em;
-            color: #555;
+
+        .contact-card .cyber-name {
+             background: linear-gradient(135deg, #ff6b6b, #ff8e53);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+
+        .contact-info p {
+            font-size: 1rem;
+            color: #a1a1a6; /* Consistent secondary text color */
+            margin-bottom: 0.8rem; /* Spacing between lines */
             display: flex;
             align-items: center;
         }
-        .contact-card ul li strong {
-            color: #34495e;
-            margin-right: 8px;
+        
+        .contact-info p strong {
             font-weight: 500;
-            min-width: 60px; /* Ensures alignment */
+            color: #c7c7cc; /* Slightly brighter label */
+            min-width: 80px; /* Align values */
         }
-        .contact-card ul li a {
-            color: #3498db;
+
+        .contact-info a {
+            color: #a1a1a6;
             text-decoration: none;
-            transition: color 0.2s ease;
-        }
-        .contact-card ul li a:hover {
-            color: #2980b9;
-            text-decoration: underline;
-        }
-        /* Simple icons (could be replaced with SVGs or icon font for more polish) */
-        .contact-card ul li strong::before {
-            content: '';
-            display: inline-block;
-            width: 16px;
-            height: 16px;
-            margin-right: 8px;
-            background-size: contain;
-            background-repeat: no-repeat;
-            vertical-align: middle;
-        }
-        .contact-card ul li strong.phone::before {
-            /* Placeholder for phone icon, using a simple character for now */
-            content: '📞'; /* Or use a proper icon */
-            font-size: 1em;
-        }
-        .contact-card ul li strong.email::before {
-            /* Placeholder for email icon */
-            content: '📧'; /* Or use a proper icon */
-            font-size: 1em;
+            transition: color 0.3s ease;
         }
 
-        footer {
-            text-align: center;
-            margin-top: 50px;
-            padding: 20px;
-            color: #7f8c8d;
-            font-size: 0.9em;
+        .contact-info a:hover {
+            color: #007aff; /* Accent color on hover */
+        }
+        
+        .icon {
+            width: 18px; /* Smaller icons */
+            height: 18px;
+            margin-right: 10px; /* Space between icon and text */
+            opacity: 0.7;
         }
 
-        @media (max-width: 768px) {
-            header h1 {
-                font-size: 2em;
-            }
-            .contact-card {
-                max-width: 100%;
-            }
-        }
     </style>
 </head>
 <body>
-    <div class="container">
-        <header>
-            <h1>Contact Us</h1>
-        </header>
 
+    <nav class="dashboard-nav">
+        <a href="index.html" class="nav-link">‹ Terug</a>
+        <span class="nav-title">Contact</span>
+    </nav>
+
+    <div class="contact-container">
+        <h1 class="page-title">Neem Contact Op</h1>
+        <p class="page-subtitle">Wij staan klaar om uw vragen te beantwoorden en te bespreken hoe De CyberConsultant uw organisatie kan helpen met AI en Cybersecurity uitdagingen.</p>
+        
         <div class="contact-grid">
             <div class="contact-card">
-                <h2>Lev Ankone</h2>
-                <ul>
-                    <li><strong class="phone">Phone:</strong> <a href="tel:+31648512059">+31 6 48512059</a></li>
-                    <li><strong class="email">Email:</strong> <a href="mailto:l.ankone@decyberconsultant.nl">l.ankone@decyberconsultant.nl</a></li>
-                </ul>
+                <h3 class="ai-name">Lev Ankone</h3>
+                <div class="contact-info">
+                    <p>
+                        <svg class="icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" stroke="currentColor"><path d="M3.53049 7.66C3.84049 4.66 6.15049 2.34 9.16049 2.04C12.9005 1.65 16.1905 4.94 15.8105 8.68C15.5705 10.95 14.0905 12.94 12.0005 13.68C11.7405 13.77 11.5005 13.95 11.2505 14.03L10.2505 14.38C7.50049 15.37 5.83049 18.69 7.50049 21.08" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/><path d="M10.5 17C10.5 17.83 11.17 18.5 12 18.5C12.83 18.5 13.5 17.83 13.5 17C13.5 16.17 12.83 15.5 12 15.5C11.17 15.5 10.5 16.17 10.5 17Z" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/><path d="M17.5 7C17.5 7.83 18.17 8.5 19 8.5C19.83 8.5 20.5 7.83 20.5 7C20.5 6.17 19.83 5.5 19 5.5C18.17 5.5 17.5 6.17 17.5 7Z" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                        <strong>Telefoon:</strong> <a href="tel:+31648512059">+31 6 48512059</a>
+                    </p>
+                    <p>
+                        <svg class="icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" stroke="currentColor"><path d="M17 20.5H7C4 20.5 2 19 2 15.5V8.5C2 5 4 3.5 7 3.5H17C20 3.5 22 5 22 8.5V15.5C22 19 20 20.5 17 20.5Z" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/><path d="M17 9L13.87 11.5C12.84 12.32 11.15 12.32 10.12 11.5L7 9" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                        <strong>E-mail:</strong> <a href="mailto:l.ankone@decyberconsultant.nl">l.ankone@decyberconsultant.nl</a>
+                    </p>
+                </div>
             </div>
 
             <div class="contact-card">
-                <h2>Melle Jorna</h2>
-                <ul>
-                    <li><strong class="phone">Phone:</strong> <a href="tel:+31641289756">+31 6 41289756</a></li>
-                    <li><strong class="email">Email:</strong> <a href="mailto:m.jorna@decyberconsultant.nl">m.jorna@decyberconsultant.nl</a></li>
-                </ul>
+                <h3 class="cyber-name">Melle Jorna</h3>
+                <div class="contact-info">
+                     <p>
+                        <svg class="icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" stroke="currentColor"><path d="M3.53049 7.66C3.84049 4.66 6.15049 2.34 9.16049 2.04C12.9005 1.65 16.1905 4.94 15.8105 8.68C15.5705 10.95 14.0905 12.94 12.0005 13.68C11.7405 13.77 11.5005 13.95 11.2505 14.03L10.2505 14.38C7.50049 15.37 5.83049 18.69 7.50049 21.08" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/><path d="M10.5 17C10.5 17.83 11.17 18.5 12 18.5C12.83 18.5 13.5 17.83 13.5 17C13.5 16.17 12.83 15.5 12 15.5C11.17 15.5 10.5 16.17 10.5 17Z" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/><path d="M17.5 7C17.5 7.83 18.17 8.5 19 8.5C19.83 8.5 20.5 7.83 20.5 7C20.5 6.17 19.83 5.5 19 5.5C18.17 5.5 17.5 6.17 17.5 7Z" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                        <strong>Telefoon:</strong> <a href="tel:+31641289756">+31 6 41289756</a>
+                    </p>
+                    <p>
+                        <svg class="icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" stroke="currentColor"><path d="M17 20.5H7C4 20.5 2 19 2 15.5V8.5C2 5 4 3.5 7 3.5H17C20 3.5 22 5 22 8.5V15.5C22 19 20 20.5 17 20.5Z" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/><path d="M17 9L13.87 11.5C12.84 12.32 11.15 12.32 10.12 11.5L7 9" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                        <strong>E-mail:</strong> <a href="mailto:m.jorna@decyberconsultant.nl">m.jorna@decyberconsultant.nl</a>
+                    </p>
+                </div>
             </div>
         </div>
-
-        <footer>
-            <p>&copy; 2024 De Cyber Consultant. All rights reserved.</p>
-        </footer>
     </div>
+
 </body>
 </html>
