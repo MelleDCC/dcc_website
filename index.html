@@ -895,6 +895,15 @@
                 font-size: 3.5rem;
             }
         }
+        /* New button container style */
+        .contact-button-container {
+            position: absolute;
+            bottom: 3rem;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 10;
+            text-align: center;
+        }
     </style>
 </head>
 <body>
@@ -926,6 +935,9 @@
                         <button class="cta-button" onclick="selectService('cyber')">Ontdek Cyber</button>
                     </div>
                 </div>
+            </div>
+            <div class="contact-button-container">
+                <a href="#contact" class="cta-button">Contact</a>
             </div>
         </div>
 
