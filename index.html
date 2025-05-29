@@ -17,8 +17,8 @@
             font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Inter', system-ui, sans-serif;
             height: 100vh;
             overflow: hidden;
-            background: #000;
-            color: #f5f5f7;
+            background: #FFFFFF; /* Primary background to white */
+            color: #1D1D1F; /* Primary text to dark gray */
             -webkit-font-smoothing: antialiased;
             -moz-osx-font-smoothing: grayscale;
         }
@@ -58,7 +58,7 @@
             position: relative;
             cursor: pointer;
             transition: all 0.6s cubic-bezier(0.25, 0.1, 0.25, 1);
-            background: #000;
+            background: #FFFFFF; /* Section background to white */
             overflow: hidden;
         }
 
@@ -69,13 +69,13 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: rgba(255, 255, 255, 0.02);
+            background: rgba(0, 0, 0, 0.015); /* Subtle dark overlay on white */
             transition: all 0.4s ease;
             z-index: 1;
         }
 
         .ai-section {
-            border-right: 1px solid rgba(255, 255, 255, 0.08);
+            border-right: 1px solid rgba(0, 0, 0, 0.08); /* Darker border for light bg */
         }
 
         .section:hover {
@@ -83,7 +83,7 @@
         }
 
         .section:hover::before {
-            background: rgba(255, 255, 255, 0.05);
+            background: rgba(0, 0, 0, 0.03); /* Slightly darker overlay on hover */
         }
 
         .section-content {
@@ -104,8 +104,8 @@
             height: 72px;
             margin: 0 auto 2.5rem;
             border-radius: 18px;
-            background: rgba(255, 255, 255, 0.06);
-            border: 1px solid rgba(255, 255, 255, 0.08);
+            background: rgba(0, 0, 0, 0.03); /* Darker icon bg on white */
+            border: 1px solid rgba(0, 0, 0, 0.06); /* Darker icon border */
             display: flex;
             align-items: center;
             justify-content: center;
@@ -121,16 +121,16 @@
             left: -2px;
             right: -2px;
             bottom: -2px;
-            background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+            background: linear-gradient(45deg, transparent, rgba(0, 0, 0, 0.05), transparent); /* Darker shine */
             border-radius: 20px;
             opacity: 0;
             transition: opacity 0.5s ease;
         }
 
         .section:hover .icon-container {
-            background: rgba(255, 255, 255, 0.1);
+            background: rgba(0, 0, 0, 0.05); /* Darker icon bg on hover */
             transform: translateY(-4px) scale(1.1);
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1); /* Softer shadow */
         }
 
         .section:hover .icon-container::after {
@@ -163,7 +163,7 @@
             font-size: 3.8rem;
             font-weight: 600;
             margin-bottom: 1.2rem;
-            color: #f5f5f7;
+            color: #1D1D1F; /* Title color, though overridden by gradient */
             letter-spacing: -2px;
             line-height: 1;
             transition: all 0.4s ease;
@@ -190,22 +190,22 @@
         .subtitle {
             font-size: 1.15rem;
             font-weight: 400;
-            color: #86868b;
+            color: #555555; /* Darker subtitle */
             line-height: 1.5;
             margin-bottom: 2.5rem;
             transition: all 0.3s ease;
         }
 
         .section:hover .subtitle {
-            color: #a1a1a6;
+            color: #333333; /* Even darker subtitle on hover */
         }
 
         .cta-button {
             padding: 0.8rem 2rem;
-            background: rgba(255, 255, 255, 0.08);
-            border: 1px solid rgba(255, 255, 255, 0.12);
+            background: #EAEAEA; /* Light gray button background */
+            border: 1px solid #DCDCDC; /* Light gray button border */
             border-radius: 50px;
-            color: #f5f5f7;
+            color: #1D1D1F; /* Dark text for button */
             font-weight: 500;
             font-size: 0.95rem;
             cursor: pointer;
@@ -223,14 +223,14 @@
             left: -100%;
             width: 100%;
             height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+            background: linear-gradient(90deg, transparent, rgba(0, 0, 0, 0.05), transparent); /* Darker shine */
             transition: left 0.5s ease;
         }
 
         .cta-button:hover {
-            background: rgba(255, 255, 255, 0.15);
+            background: #DCDCDC; /* Darker gray on hover */
             transform: translateY(-2px) scale(1.02);
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1); /* Softer shadow */
         }
 
         .cta-button:hover::before {
@@ -243,7 +243,7 @@
             left: 50%;
             transform: translateX(-50%);
             z-index: 10;
-            color: #f5f5f7;
+            color: #1D1D1F; /* Dark logo text */
             font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', system-ui, sans-serif;
             font-size: 1.1rem;
             font-weight: 600;
@@ -263,12 +263,12 @@
             left: 50%;
             width: 1px;
             height: 60%;
-            background: linear-gradient(to bottom, 
-                transparent 0%, 
-                rgba(255, 255, 255, 0.1) 20%, 
-                rgba(255, 255, 255, 0.15) 50%, 
-                rgba(255, 255, 255, 0.1) 80%, 
-                transparent 100%);
+            background: linear-gradient(to bottom,
+                transparent 0%,
+                rgba(0, 0, 0, 0.06) 20%,
+                rgba(0, 0, 0, 0.09) 50%,
+                rgba(0, 0, 0, 0.06) 80%,
+                transparent 100%); /* Darker divider */
             z-index: 5;
         }
 
@@ -277,7 +277,7 @@
             position: absolute;
             width: 100%;
             height: 100%;
-            background: #0a0a0a;
+            background: #FFFFFF; /* Content page background to white */
             transform: translateY(100%);
             transition: all 0.7s cubic-bezier(0.25, 0.1, 0.25, 1);
             z-index: 3;
@@ -295,9 +295,9 @@
             top: 2rem;
             left: 50%;
             transform: translateX(-50%);
-            background: rgba(15, 15, 15, 0.9);
+            background: rgba(245, 245, 247, 0.85); /* Light, slightly transparent nav bg */
             backdrop-filter: blur(20px);
-            border: 1px solid rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(0, 0, 0, 0.08); /* Darker border for nav */
             border-radius: 50px;
             padding: 0.8rem 2rem;
             display: flex;
@@ -308,21 +308,21 @@
         }
 
         .nav-back {
-            color: #666;
+            color: #555555; /* Darker gray for nav link */
             text-decoration: none;
             font-size: 0.85rem;
             transition: color 0.3s ease;
         }
 
         .nav-back:hover {
-            color: #007aff;
+            color: #007aff; /* Accent blue on hover */
         }
 
         .nav-status {
             display: flex;
             align-items: center;
             gap: 0.5rem;
-            color: #888;
+            color: #555555; /* Darker gray for status text */
             font-size: 0.8rem;
         }
 
@@ -340,7 +340,7 @@
         }
 
         .nav-logo {
-            color: #fff;
+            color: #1D1D1F; /* Dark nav logo text */
             font-weight: 600;
             font-size: 0.9rem;
         }
@@ -355,7 +355,7 @@
         }
 
         .hero-left {
-            background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
+            background: linear-gradient(135deg, #F5F5F5 0%, #FFFFFF 100%); /* Light gradient for hero left */
             padding: 8rem 4rem;
             display: flex;
             flex-direction: column;
@@ -364,7 +364,7 @@
         }
 
         .hero-right {
-            background: #111;
+            background: #F0F0F0; /* Light gray for hero right */
             position: relative;
             overflow: hidden;
         }
@@ -374,7 +374,7 @@
             font-weight: 800;
             line-height: 0.9;
             margin-bottom: 2rem;
-            color: #fff;
+            color: #1D1D1F; /* Dark hero title (overridden by gradients) */
             letter-spacing: -3px;
         }
 
@@ -392,7 +392,7 @@
 
         .hero-subtitle-large {
             font-size: 1.3rem;
-            color: #888;
+            color: #555555; /* Darker hero subtitle */
             line-height: 1.5;
             margin-bottom: 3rem;
             max-width: 500px;
@@ -430,7 +430,7 @@
         }
 
         .hero-cta-advanced:hover {
-            color: #fff;
+            color: #FFFFFF; /* White text on accent fill */
             transform: translateY(-2px);
         }
 
@@ -814,21 +814,21 @@
 
         .cta-button-massive {
             padding: 1.5rem 4rem;
-            background: rgba(255, 255, 255, 0.2);
-            border: 2px solid rgba(255, 255, 255, 0.4);
+            background: #EAEAEA; /* Light gray button */
+            border: 2px solid #DCDCDC; /* Light gray border */
             border-radius: 50px;
-            color: #fff;
+            color: #1D1D1F; /* Dark text */
             font-weight: 700;
             font-size: 1.2rem;
             cursor: pointer;
             transition: all 0.4s ease;
-            backdrop-filter: blur(20px);
+            backdrop-filter: blur(20px); /* Keep blur, adjust if needed for light bg */
         }
 
         .cta-button-massive:hover {
-            background: rgba(255, 255, 255, 0.3);
+            background: #DCDCDC; /* Darker gray on hover */
             transform: scale(1.05);
-            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15); /* Softer shadow */
         }
 
         /* ANIMATED BACKGROUND ELEMENTS */
@@ -838,9 +838,9 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background-image: 
-                linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+            background-image:
+                linear-gradient(rgba(0, 0, 0, 0.02) 1px, transparent 1px), /* Darker grid lines */
+                linear-gradient(90deg, rgba(0, 0, 0, 0.02) 1px, transparent 1px); /* Darker grid lines */
             background-size: 50px 50px;
             animation: gridMove 20s linear infinite;
         }
@@ -858,7 +858,7 @@
             
             .ai-section {
                 border-right: none;
-                border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+                border-bottom: 1px solid rgba(0, 0, 0, 0.08); /* Darker border */
             }
             
             .hero-immersive {

@@ -16,8 +16,8 @@
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Inter', system-ui, sans-serif;
             min-height: 100vh;
-            background: #000;
-            color: #f5f5f7;
+            background: #FFFFFF; /* Primary background to white */
+            color: #1D1D1F; /* Primary text to dark gray */
             -webkit-font-smoothing: antialiased;
             -moz-osx-font-smoothing: grayscale;
             display: flex;
@@ -31,9 +31,9 @@
             top: 2rem;
             left: 50%;
             transform: translateX(-50%);
-            background: rgba(15, 15, 15, 0.85); /* Slightly more opaque for readability */
+            background: rgba(245, 245, 247, 0.85); /* Light, slightly transparent nav bg */
             backdrop-filter: blur(15px);
-            border: 1px solid rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(0, 0, 0, 0.08); /* Darker border for nav */
             border-radius: 50px;
             padding: 0.8rem 1.5rem; /* Adjusted padding */
             display: flex;
@@ -44,7 +44,7 @@
         }
 
         .nav-link {
-            color: #a1a1a6; /* Softer color */
+            color: #555555; /* Darker gray for nav link */
             text-decoration: none;
             font-size: 0.9rem;
             transition: color 0.3s ease;
@@ -53,12 +53,12 @@
         }
 
         .nav-link:hover {
-            color: #007aff;
-            background-color: rgba(255, 255, 255, 0.05);
+            color: #007aff; /* Accent blue on hover */
+            background-color: rgba(0, 0, 0, 0.03); /* Subtle dark hover bg */
         }
         
         .nav-title {
-            color: #f5f5f7;
+            color: #1D1D1F; /* Dark nav title text */
             font-weight: 600;
             font-size: 1rem;
         }
@@ -73,14 +73,14 @@
         .page-title {
             font-size: 2.8rem;
             font-weight: 700;
-            color: #f5f5f7;
+            color: #1D1D1F; /* Dark page title */
             margin-bottom: 1rem;
             letter-spacing: -1px;
         }
         
         .page-subtitle {
             font-size: 1.1rem;
-            color: #86868b;
+            color: #555555; /* Darker subtitle */
             margin-bottom: 3rem;
             max-width: 600px;
             margin-left: auto;
@@ -96,27 +96,27 @@
         }
 
         .contact-card {
-            background: rgba(255, 255, 255, 0.03); /* Darker, more subtle */
-            border: 1px solid rgba(255, 255, 255, 0.08);
+            background: #F9F9F9; /* Light gray card background */
+            border: 1px solid #E0E0E0; /* Light gray border */
             border-radius: 16px; /* More rounded */
             padding: 2rem;
             text-align: left;
             transition: all 0.3s cubic-bezier(0.25, 0.1, 0.25, 1);
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05); /* Softer shadow */
         }
 
         .contact-card:hover {
             transform: translateY(-5px) scale(1.02);
-            background: rgba(255, 255, 255, 0.05);
-            border-color: rgba(255, 255, 255, 0.12);
-            box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+            background: #F0F0F0; /* Slightly darker on hover */
+            border-color: #D0D0D0; /* Darker border on hover */
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1); /* Softer shadow on hover */
         }
 
         .contact-card h3 {
             font-size: 1.75rem; /* Larger name */
             font-weight: 600;
             margin-bottom: 1.5rem; /* More space */
-            color: #f5f5f7;
+            color: #1D1D1F; /* Dark name (overridden by gradient) */
         }
         
         .contact-card .ai-name {
@@ -136,7 +136,7 @@
 
         .contact-info p {
             font-size: 1rem;
-            color: #a1a1a6; /* Consistent secondary text color */
+            color: #555555; /* Darker secondary text */
             margin-bottom: 0.8rem; /* Spacing between lines */
             display: flex;
             align-items: center;
@@ -144,18 +144,18 @@
         
         .contact-info p strong {
             font-weight: 500;
-            color: #c7c7cc; /* Slightly brighter label */
+            color: #333333; /* Darker label */
             min-width: 80px; /* Align values */
         }
 
         .contact-info a {
-            color: #a1a1a6;
+            color: #555555; /* Darker link color */
             text-decoration: none;
             transition: color 0.3s ease;
         }
 
         .contact-info a:hover {
-            color: #007aff; /* Accent color on hover */
+            color: #007aff; /* Accent color on hover - remains */
         }
         
         .icon {
@@ -163,6 +163,7 @@
             height: 18px;
             margin-right: 10px; /* Space between icon and text */
             opacity: 0.7;
+            stroke: #555555; /* Set icon stroke color */
         }
 
     </style>
