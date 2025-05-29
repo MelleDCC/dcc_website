@@ -47,18 +47,21 @@
             color: #555555; /* Darker gray for nav link */
             text-decoration: none;
             font-size: 0.9rem;
-            transition: color 0.3s ease;
+            transition: color 0.3s ease, background-color 0.3s ease, border 0.3s ease;
             padding: 0.3rem 0.5rem;
             border-radius: 8px;
         }
 
         .nav-link:hover {
             color: #007aff; /* Accent blue on hover */
-            background-color: rgba(0, 0, 0, 0.03); /* Subtle dark hover bg */
+            background-color: rgba(255, 255, 255, 0.2);
+            -webkit-backdrop-filter: blur(5px);
+            backdrop-filter: blur(5px);
+            border: 1px solid rgba(220, 220, 220, 0.5); /* Subtle light border */
         }
         
         .nav-title {
-            color: #1D1D1F; /* Dark nav title text */
+            color: #36454F; /* Anthracite nav title text */
             font-weight: 600;
             font-size: 1rem;
         }
@@ -73,7 +76,7 @@
         .page-title {
             font-size: 2.8rem;
             font-weight: 700;
-            color: #1D1D1F; /* Dark page title */
+            color: #36454F; /* Anthracite page title */
             margin-bottom: 1rem;
             letter-spacing: -1px;
         }
@@ -107,9 +110,11 @@
 
         .contact-card:hover {
             transform: translateY(-5px) scale(1.02);
-            background: #F0F0F0; /* Slightly darker on hover */
-            border-color: #D0D0D0; /* Darker border on hover */
-            box-shadow: 0 8px 25px rgba(0,0,0,0.1); /* Softer shadow on hover */
+            background-color: rgba(255, 255, 255, 0.2);
+            -webkit-backdrop-filter: blur(5px);
+            backdrop-filter: blur(5px);
+            border: 1px solid rgba(220, 220, 220, 0.7); /* Slightly more visible light border */
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1); /* Keep existing shadow */
         }
 
         .contact-card h3 {
@@ -144,18 +149,23 @@
         
         .contact-info p strong {
             font-weight: 500;
-            color: #333333; /* Darker label */
+            color: #36454F; /* Anthracite label */
             min-width: 80px; /* Align values */
         }
 
         .contact-info a {
             color: #555555; /* Darker link color */
             text-decoration: none;
-            transition: color 0.3s ease;
+            transition: color 0.3s ease, background-color 0.3s ease, padding 0.3s ease, border-radius 0.3s ease;
         }
 
         .contact-info a:hover {
             color: #007aff; /* Accent color on hover - remains */
+            background-color: rgba(255, 255, 255, 0.15); /* Subtle glass */
+            -webkit-backdrop-filter: blur(3px); /* Less blur for smaller element */
+            backdrop-filter: blur(3px);
+            padding: 0.1rem 0.3rem; /* Small padding for effect */
+            border-radius: 4px; /* Small radius */
         }
         
         .icon {

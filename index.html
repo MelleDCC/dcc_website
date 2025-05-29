@@ -69,13 +69,13 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: rgba(0, 0, 0, 0.015); /* Subtle dark overlay on white */
+            background: rgba(230, 230, 230, 0.2); /* Subtle light-grey overlay */
             transition: all 0.4s ease;
             z-index: 1;
         }
 
         .ai-section {
-            border-right: 1px solid rgba(0, 0, 0, 0.08); /* Darker border for light bg */
+            border-right: 1px solid rgba(220, 220, 220, 0.7); /* Lighter border */
         }
 
         .section:hover {
@@ -83,7 +83,9 @@
         }
 
         .section:hover::before {
-            background: rgba(0, 0, 0, 0.03); /* Slightly darker overlay on hover */
+            background-color: rgba(220, 220, 220, 0.1); /* Lighter base for glass */
+            -webkit-backdrop-filter: blur(5px);
+            backdrop-filter: blur(5px);
         }
 
         .section-content {
@@ -104,8 +106,8 @@
             height: 72px;
             margin: 0 auto 2.5rem;
             border-radius: 18px;
-            background: rgba(0, 0, 0, 0.03); /* Darker icon bg on white */
-            border: 1px solid rgba(0, 0, 0, 0.06); /* Darker icon border */
+            background: rgba(0, 0, 0, 0.015); /* Less dark icon bg on white */
+            border: 1px solid rgba(0, 0, 0, 0.03); /* Lighter icon border */
             display: flex;
             align-items: center;
             justify-content: center;
@@ -121,16 +123,16 @@
             left: -2px;
             right: -2px;
             bottom: -2px;
-            background: linear-gradient(45deg, transparent, rgba(0, 0, 0, 0.05), transparent); /* Darker shine */
+            background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.2), transparent); /* Lighter shine */
             border-radius: 20px;
             opacity: 0;
             transition: opacity 0.5s ease;
         }
 
         .section:hover .icon-container {
-            background: rgba(0, 0, 0, 0.05); /* Darker icon bg on hover */
+            background: rgba(0, 0, 0, 0.025); /* Less dark icon bg on hover */
             transform: translateY(-4px) scale(1.1);
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1); /* Softer shadow */
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08); /* Softer shadow */
         }
 
         .section:hover .icon-container::after {
@@ -202,10 +204,10 @@
 
         .cta-button {
             padding: 0.8rem 2rem;
-            background: #EAEAEA; /* Light gray button background */
-            border: 1px solid #DCDCDC; /* Light gray button border */
+            background: #36454F; /* Anthracite button background */
+            border: 1px solid #36454F; /* Anthracite button border */
             border-radius: 50px;
-            color: #1D1D1F; /* Dark text for button */
+            color: #FFFFFF; /* White text for button */
             font-weight: 500;
             font-size: 0.95rem;
             cursor: pointer;
@@ -223,12 +225,16 @@
             left: -100%;
             width: 100%;
             height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(0, 0, 0, 0.05), transparent); /* Darker shine */
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent); /* Lighter shine */
             transition: left 0.5s ease;
         }
 
         .cta-button:hover {
-            background: #DCDCDC; /* Darker gray on hover */
+            background-color: rgba(42, 52, 60, 0.7) !important; /* Darker Anthracite with transparency */
+            -webkit-backdrop-filter: blur(5px);
+            backdrop-filter: blur(5px);
+            border: 1px solid rgba(255, 255, 255, 0.2); /* Subtle light border */
+            color: #FFFFFF; /* Ensure text color remains */
             transform: translateY(-2px) scale(1.02);
             box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1); /* Softer shadow */
         }
@@ -265,9 +271,9 @@
             height: 60%;
             background: linear-gradient(to bottom,
                 transparent 0%,
-                rgba(0, 0, 0, 0.06) 20%,
-                rgba(0, 0, 0, 0.09) 50%,
-                rgba(0, 0, 0, 0.06) 80%,
+                rgba(204, 204, 204, 0.06) 20%,
+                rgba(204, 204, 204, 0.09) 50%,
+                rgba(204, 204, 204, 0.06) 80%,
                 transparent 100%); /* Darker divider */
             z-index: 5;
         }
@@ -315,7 +321,13 @@
         }
 
         .nav-back:hover {
-            color: #007aff; /* Accent blue on hover */
+            color: #007aff;
+            background-color: rgba(220, 220, 220, 0.3); /* Light greyish transparent */
+            -webkit-backdrop-filter: blur(5px);
+            backdrop-filter: blur(5px);
+            border: 1px solid rgba(0, 0, 0, 0.05); /* Subtle dark border */
+            padding: 0.3rem 0.5rem; /* Ensure padding for bg */
+            border-radius: 8px; /* Ensure radius for bg */
         }
 
         .nav-status {
@@ -401,9 +413,9 @@
         .hero-cta-advanced {
             padding: 1.2rem 3rem;
             background: transparent;
-            border: 2px solid #007aff;
+            border: 2px solid #36454F; /* Anthracite border */
             border-radius: 50px;
-            color: #007aff;
+            color: #36454F; /* Anthracite color */
             font-weight: 600;
             font-size: 1rem;
             cursor: pointer;
@@ -420,7 +432,7 @@
             left: -100%;
             width: 100%;
             height: 100%;
-            background: #007aff;
+            background: #36454F; /* Anthracite background for fill */
             transition: left 0.4s ease;
             z-index: -1;
         }
@@ -432,15 +444,19 @@
         .hero-cta-advanced:hover {
             color: #FFFFFF; /* White text on accent fill */
             transform: translateY(-2px);
+            background-color: rgba(255, 255, 255, 0.1); /* Very subtle glass over the ::before fill */
+            -webkit-backdrop-filter: blur(3px);
+            backdrop-filter: blur(3px);
+            border-radius: 50px; /* Ensure it matches element for backdrop */
         }
 
         .cyber-content .hero-cta-advanced {
-            border-color: #ff4757;
-            color: #ff4757;
+            border-color: #36454F; /* Anthracite border */
+            color: #36454F; /* Anthracite color */
         }
 
         .cyber-content .hero-cta-advanced::before {
-            background: #ff4757;
+            background: #36454F; /* Anthracite background for fill */
         }
 
         /* INTERACTIVE DATA VISUALIZATION */
@@ -496,7 +512,7 @@
         .services-diagonal {
             position: relative;
             padding: 8rem 0;
-            background: #111;
+            background: #F0F2F5; /* Light grey background */
             transform: skewY(-3deg);
             margin: 4rem 0;
         }
