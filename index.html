@@ -17,8 +17,8 @@
             font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Inter', system-ui, sans-serif;
             height: 100vh;
             overflow: hidden;
-            background: #FFFFFF; /* Primary background to white */
-            color: #1D1D1F; /* Primary text to dark gray */
+            background: linear-gradient(135deg, #0a0b1e 0%, #1a1b3e 50%, #2d1b69 100%);
+            color: #ffffff;
             -webkit-font-smoothing: antialiased;
             -moz-osx-font-smoothing: grayscale;
         }
@@ -58,8 +58,10 @@
             position: relative;
             cursor: pointer;
             transition: all 0.6s cubic-bezier(0.25, 0.1, 0.25, 1);
-            background: #FFFFFF; /* Section background to white */
+            background: rgba(255, 255, 255, 0.02);
+            backdrop-filter: blur(20px);
             overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, 0.1);
         }
 
         .section::before {
@@ -69,23 +71,34 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: rgba(230, 230, 230, 0.2); /* Subtle light-grey overlay */
+            background: linear-gradient(135deg, rgba(0, 255, 255, 0.03) 0%, rgba(255, 0, 255, 0.03) 100%);
             transition: all 0.4s ease;
             z-index: 1;
         }
 
         .ai-section {
-            border-right: 1px solid rgba(220, 220, 220, 0.7); /* Lighter border */
+            border-right: 1px solid rgba(0, 255, 255, 0.3);
+            background: linear-gradient(135deg, rgba(0, 255, 255, 0.05) 0%, rgba(0, 122, 255, 0.05) 100%);
+        }
+        
+        .cyber-section {
+            background: linear-gradient(135deg, rgba(255, 20, 147, 0.05) 0%, rgba(255, 69, 0, 0.05) 100%);
         }
 
         .section:hover {
             flex: 1.12;
         }
 
-        .section:hover::before {
-            background-color: rgba(220, 220, 220, 0.1); /* Lighter base for glass */
-            -webkit-backdrop-filter: blur(5px);
-            backdrop-filter: blur(5px);
+        .ai-section:hover::before {
+            background: linear-gradient(135deg, rgba(0, 255, 255, 0.15) 0%, rgba(0, 122, 255, 0.15) 100%);
+            -webkit-backdrop-filter: blur(10px);
+            backdrop-filter: blur(10px);
+        }
+        
+        .cyber-section:hover::before {
+            background: linear-gradient(135deg, rgba(255, 20, 147, 0.15) 0%, rgba(255, 69, 0, 0.15) 100%);
+            -webkit-backdrop-filter: blur(10px);
+            backdrop-filter: blur(10px);
         }
 
         .section-content {
@@ -102,18 +115,19 @@
         }
 
         .icon-container {
-            width: 72px;
-            height: 72px;
+            width: 80px;
+            height: 80px;
             margin: 0 auto 2.5rem;
-            border-radius: 18px;
-            background: rgba(0, 0, 0, 0.015); /* Less dark icon bg on white */
-            border: 1px solid rgba(0, 0, 0, 0.03); /* Lighter icon border */
+            border-radius: 20px;
+            background: rgba(255, 255, 255, 0.08);
+            border: 2px solid rgba(255, 255, 255, 0.2);
             display: flex;
             align-items: center;
             justify-content: center;
             transition: all 0.5s cubic-bezier(0.25, 0.1, 0.25, 1);
             position: relative;
             overflow: hidden;
+            backdrop-filter: blur(10px);
         }
 
         .icon-container::after {
@@ -129,10 +143,18 @@
             transition: opacity 0.5s ease;
         }
 
-        .section:hover .icon-container {
-            background: rgba(0, 0, 0, 0.025); /* Less dark icon bg on hover */
+        .ai-section:hover .icon-container {
+            background: rgba(0, 255, 255, 0.2);
+            border-color: rgba(0, 255, 255, 0.5);
             transform: translateY(-4px) scale(1.1);
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08); /* Softer shadow */
+            box-shadow: 0 15px 40px rgba(0, 255, 255, 0.3);
+        }
+        
+        .cyber-section:hover .icon-container {
+            background: rgba(255, 20, 147, 0.2);
+            border-color: rgba(255, 20, 147, 0.5);
+            transform: translateY(-4px) scale(1.1);
+            box-shadow: 0 15px 40px rgba(255, 20, 147, 0.3);
         }
 
         .section:hover .icon-container::after {
@@ -152,13 +174,15 @@
         }
 
         .ai-icon {
-            background: url("data:image/svg+xml,%3Csvg viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M12 2L13.09 8.36L16 5L12.64 6.91L19 8L12.64 9.09L16 12L13.09 10.09L12 16L10.91 10.09L8 12L11.36 9.09L5 8L11.36 6.91L8 5L10.91 8.36L12 2Z' stroke='%23007aff' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") no-repeat center;
+            background: url("data:image/svg+xml,%3Csvg viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M12 2L13.09 8.36L16 5L12.64 6.91L19 8L12.64 9.09L16 12L13.09 10.09L12 16L10.91 10.09L8 12L11.36 9.09L5 8L11.36 6.91L8 5L10.91 8.36L12 2Z' stroke='%2300ffff' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' fill='%2300ffff' fill-opacity='0.1'/%3E%3C/svg%3E") no-repeat center;
             background-size: contain;
+            filter: drop-shadow(0 0 10px rgba(0, 255, 255, 0.5));
         }
 
         .cyber-icon {
-            background: url("data:image/svg+xml,%3Csvg viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M6 10V8C6 5.79086 7.79086 4 10 4H14C16.2091 4 18 5.79086 18 8V10M3 10H21L20 20H4L3 10Z' stroke='%23ff6b6b' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3Ccircle cx='12' cy='15' r='2' stroke='%23ff6b6b' stroke-width='1.5'/%3E%3C/svg%3E") no-repeat center;
+            background: url("data:image/svg+xml,%3Csvg viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M6 10V8C6 5.79086 7.79086 4 10 4H14C16.2091 4 18 5.79086 18 8V10M3 10H21L20 20H4L3 10Z' stroke='%23ff1493' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' fill='%23ff1493' fill-opacity='0.1'/%3E%3Ccircle cx='12' cy='15' r='2' stroke='%23ff1493' stroke-width='2' fill='%23ff1493' fill-opacity='0.2'/%3E%3C/svg%3E") no-repeat center;
             background-size: contain;
+            filter: drop-shadow(0 0 10px rgba(255, 20, 147, 0.5));
         }
 
         .title {
@@ -176,46 +200,49 @@
         }
 
         .ai-section .title {
-            background: linear-gradient(135deg, #007aff, #3A9ECF);
+            background: linear-gradient(135deg, #00ffff, #007aff);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
+            text-shadow: 0 0 30px rgba(0, 255, 255, 0.5);
         }
 
         .cyber-section .title {
-            background: linear-gradient(135deg, #E55A5A, #D9703A);
+            background: linear-gradient(135deg, #ff1493, #ff4500);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
+            text-shadow: 0 0 30px rgba(255, 20, 147, 0.5);
         }
 
         .subtitle {
             font-size: 1.15rem;
             font-weight: 400;
-            color: #555555; /* Darker subtitle */
+            color: rgba(255, 255, 255, 0.8);
             line-height: 1.5;
             margin-bottom: 2.5rem;
             transition: all 0.3s ease;
         }
 
         .section:hover .subtitle {
-            color: #333333; /* Even darker subtitle on hover */
+            color: rgba(255, 255, 255, 1);
         }
 
         .cta-button {
-            padding: 0.8rem 2rem;
-            background: #36454F; /* Anthracite button background */
-            border: 1px solid #36454F; /* Anthracite button border */
+            padding: 1rem 2.5rem;
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.05));
+            border: 2px solid rgba(255, 255, 255, 0.3);
             border-radius: 50px;
-            color: #FFFFFF; /* White text for button */
-            font-weight: 500;
-            font-size: 0.95rem;
+            color: #ffffff;
+            font-weight: 600;
+            font-size: 1rem;
             cursor: pointer;
             transition: all 0.3s cubic-bezier(0.25, 0.1, 0.25, 1);
             text-decoration: none;
             display: inline-block;
             position: relative;
             overflow: hidden;
+            backdrop-filter: blur(10px);
         }
 
         .cta-button::before {
@@ -229,14 +256,18 @@
             transition: left 0.5s ease;
         }
 
-        .cta-button:hover {
-            background-color: rgba(42, 52, 60, 0.7) !important; /* Darker Anthracite with transparency */
-            -webkit-backdrop-filter: blur(5px);
-            backdrop-filter: blur(5px);
-            border: 1px solid rgba(255, 255, 255, 0.2); /* Subtle light border */
-            color: #FFFFFF; /* Ensure text color remains */
-            transform: translateY(-2px) scale(1.02);
-            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1); /* Softer shadow */
+        .ai-section .cta-button:hover {
+            background: linear-gradient(135deg, rgba(0, 255, 255, 0.3), rgba(0, 122, 255, 0.3));
+            border-color: rgba(0, 255, 255, 0.6);
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 0 10px 30px rgba(0, 255, 255, 0.4);
+        }
+        
+        .cyber-section .cta-button:hover {
+            background: linear-gradient(135deg, rgba(255, 20, 147, 0.3), rgba(255, 69, 0, 0.3));
+            border-color: rgba(255, 20, 147, 0.6);
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 0 10px 30px rgba(255, 20, 147, 0.4);
         }
 
         .cta-button:hover::before {
@@ -249,13 +280,14 @@
             left: 50%;
             transform: translateX(-50%);
             z-index: 10;
-            color: #1D1D1F; /* Dark logo text */
+            color: #ffffff;
             font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', system-ui, sans-serif;
-            font-size: 1.1rem;
-            font-weight: 600;
+            font-size: 1.2rem;
+            font-weight: 700;
             letter-spacing: -0.3px;
             cursor: pointer;
             transition: all 0.3s ease;
+            text-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
         }
 
         .logo:hover {
@@ -283,7 +315,7 @@
             position: absolute;
             width: 100%;
             height: 100%;
-            background: #FFFFFF; /* Content page background to white */
+            background: linear-gradient(135deg, #0a0b1e 0%, #1a1b3e 50%, #2d1b69 100%);
             transform: translateY(100%);
             transition: all 0.7s cubic-bezier(0.25, 0.1, 0.25, 1);
             z-index: 3;
@@ -301,9 +333,9 @@
             top: 2rem;
             left: 50%;
             transform: translateX(-50%);
-            background: rgba(245, 245, 247, 0.85); /* Light, slightly transparent nav bg */
+            background: rgba(255, 255, 255, 0.1);
             backdrop-filter: blur(20px);
-            border: 1px solid rgba(0, 0, 0, 0.08); /* Darker border for nav */
+            border: 1px solid rgba(255, 255, 255, 0.2);
             border-radius: 50px;
             padding: 0.8rem 2rem;
             display: flex;
@@ -314,27 +346,27 @@
         }
 
         .nav-back {
-            color: #555555; /* Darker gray for nav link */
+            color: rgba(255, 255, 255, 0.8);
             text-decoration: none;
             font-size: 0.85rem;
-            transition: color 0.3s ease;
+            transition: all 0.3s ease;
+            padding: 0.3rem 0.5rem;
+            border-radius: 8px;
         }
 
         .nav-back:hover {
-            color: #0056b3;
-            background-color: rgba(220, 220, 220, 0.3); /* Light greyish transparent */
+            color: #00ffff;
+            background-color: rgba(0, 255, 255, 0.1);
             -webkit-backdrop-filter: blur(5px);
             backdrop-filter: blur(5px);
-            border: 1px solid rgba(0, 0, 0, 0.05); /* Subtle dark border */
-            padding: 0.3rem 0.5rem; /* Ensure padding for bg */
-            border-radius: 8px; /* Ensure radius for bg */
+            border: 1px solid rgba(0, 255, 255, 0.3);
         }
 
         .nav-status {
             display: flex;
             align-items: center;
             gap: 0.5rem;
-            color: #555555; /* Darker gray for status text */
+            color: rgba(255, 255, 255, 0.8);
             font-size: 0.8rem;
         }
 
@@ -352,7 +384,7 @@
         }
 
         .nav-logo {
-            color: #1D1D1F; /* Dark nav logo text */
+            color: #ffffff;
             font-weight: 600;
             font-size: 0.9rem;
         }
@@ -859,10 +891,59 @@
             width: 100%;
             height: 100%;
             background-image:
-                linear-gradient(rgba(0, 0, 0, 0.02) 1px, transparent 1px), /* Darker grid lines */
-                linear-gradient(90deg, rgba(0, 0, 0, 0.02) 1px, transparent 1px); /* Darker grid lines */
-            background-size: 50px 50px;
-            animation: gridMove 20s linear infinite;
+                linear-gradient(rgba(0, 255, 255, 0.1) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255, 20, 147, 0.1) 1px, transparent 1px);
+            background-size: 60px 60px;
+            animation: gridMove 30s linear infinite;
+        }
+        
+        /* Particle Effect */
+        .particles {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: 1;
+        }
+        
+        .particle {
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            background: rgba(255, 255, 255, 0.6);
+            border-radius: 50%;
+            animation: float 6s ease-in-out infinite;
+        }
+        
+        .particle:nth-child(1) { left: 10%; animation-delay: 0s; }
+        .particle:nth-child(2) { left: 20%; animation-delay: 1s; }
+        .particle:nth-child(3) { left: 30%; animation-delay: 2s; }
+        .particle:nth-child(4) { left: 40%; animation-delay: 3s; }
+        .particle:nth-child(5) { left: 50%; animation-delay: 4s; }
+        .particle:nth-child(6) { left: 60%; animation-delay: 5s; }
+        .particle:nth-child(7) { left: 70%; animation-delay: 0.5s; }
+        .particle:nth-child(8) { left: 80%; animation-delay: 1.5s; }
+        .particle:nth-child(9) { left: 90%; animation-delay: 2.5s; }
+        
+        @keyframes float {
+            0%, 100% { 
+                transform: translateY(100vh) scale(0);
+                opacity: 0;
+            }
+            10% {
+                opacity: 1;
+                transform: translateY(90vh) scale(1);
+            }
+            90% {
+                opacity: 1;
+                transform: translateY(10vh) scale(1);
+            }
+            100% {
+                opacity: 0;
+                transform: translateY(0vh) scale(0);
+            }
         }
 
         @keyframes gridMove {
@@ -928,7 +1009,20 @@
 </head>
 <body>
     <div class="main-container">
-        <!-- Landing Page (Perfect - Keep Unchanged) -->
+        <!-- Particle Background -->
+        <div class="particles">
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+        </div>
+        
+        <!-- Landing Page -->
         <div class="landing-page" id="landingPage">
             <div class="logo" onclick="goHome()">De CyberConsultant</div>
             <div class="section-divider"></div>
