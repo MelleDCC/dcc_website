@@ -73,48 +73,38 @@
                 </div>
 
                 <div class="hero-visual">
-                    <div class="ai-display">
-                        <div class="display-screen">
-                            <div class="code-window">
-                                <div class="window-header">
-                                    <span></span><span></span><span></span>
+                    <div class="business-dashboard">
+                        <div style="background: rgba(255, 255, 255, 0.1); backdrop-filter: blur(20px); border-radius: 20px; padding: 2rem; border: 1px solid rgba(255, 255, 255, 0.2); box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);">
+                            <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1.5rem;">
+                                <div style="width: 12px; height: 12px; background: #34C759; border-radius: 50%; animation: pulse 2s infinite;"></div>
+                                <h4 style="margin: 0; color: #1d1d1f; font-weight: 600;">AI Systeem Dashboard</h4>
+                            </div>
+                            
+                            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-bottom: 2rem;">
+                                <div style="background: rgba(255, 255, 255, 0.05); border-radius: 12px; padding: 1rem; border: 1px solid rgba(255, 255, 255, 0.1);">
+                                    <div style="color: #007AFF; font-size: 0.85rem; font-weight: 500; margin-bottom: 0.5rem;">Procesautomatisering</div>
+                                    <div style="color: #1d1d1f; font-size: 1.1rem; font-weight: 600;">Actief</div>
                                 </div>
-                                <div class="code-content">
-                                    <div class="code-line">
-                                        <span class="line-number">1</span>
-                                        <span class="code-text"><span class="keyword">const</span> ai = <span class="keyword">new</span> <span class="function">CustomerService</span>();</span>
-                                    </div>
-                                    <div class="code-line">
-                                        <span class="line-number">2</span>
-                                        <span class="code-text">ai.<span class="method">analyze</span>(customerQuery);</span>
-                                    </div>
-                                    <div class="code-line">
-                                        <span class="line-number">3</span>
-                                        <span class="code-text"><span class="comment">// Ready to serve</span></span>
-                                    </div>
-                                    <div class="code-line">
-                                        <span class="line-number">4</span>
-                                        <span class="code-text"><span class="comment">// Training complete</span></span>
-                                    </div>
-                                    <div class="code-line">
-                                        <span class="line-number">5</span>
-                                        <span class="code-text"><span class="comment">// Proces geoptimaliseerd</span></span>
-                                    </div>
+                                <div style="background: rgba(255, 255, 255, 0.05); border-radius: 12px; padding: 1rem; border: 1px solid rgba(255, 255, 255, 0.1);">
+                                    <div style="color: #34C759; font-size: 0.85rem; font-weight: 500; margin-bottom: 0.5rem;">AI Agents</div>
+                                    <div style="color: #1d1d1f; font-size: 1.1rem; font-weight: 600;">Operationeel</div>
                                 </div>
                             </div>
-                            <div class="display-metrics">
-                                <div class="metric-item">
-                                    <span class="metric-label">Trainingen</span>
-                                    <div class="metric-bar">
-                                        <div class="bar-fill" style="--width: 100%"></div>
-                                    </div>
+                            
+                            <div style="background: rgba(255, 255, 255, 0.05); border-radius: 12px; padding: 1rem; border: 1px solid rgba(255, 255, 255, 0.1);">
+                                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
+                                    <span style="color: #86868B; font-size: 0.9rem;">Workflow Optimalisatie</span>
+                                    <span style="color: #007AFF; font-size: 0.85rem; font-weight: 500;">In uitvoering</span>
                                 </div>
-                                <div class="metric-item">
-                                    <span class="metric-label">Workshops</span>
-                                    <div class="metric-bar">
-                                        <div class="bar-fill" style="--width: 100%"></div>
-                                    </div>
+                                <div style="width: 100%; height: 4px; background: rgba(0, 122, 255, 0.1); border-radius: 2px; overflow: hidden;">
+                                    <div style="width: 75%; height: 100%; background: #007AFF; border-radius: 2px; animation: slideIn 3s ease-out;"></div>
                                 </div>
+                            </div>
+                            
+                            <div style="margin-top: 1.5rem; display: flex; gap: 0.5rem;">
+                                <div style="width: 8px; height: 8px; background: #007AFF; border-radius: 50%; animation: blink 1.5s infinite;"></div>
+                                <div style="width: 8px; height: 8px; background: #34C759; border-radius: 50%; animation: blink 1.5s infinite 0.5s;"></div>
+                                <div style="width: 8px; height: 8px; background: #FF9500; border-radius: 50%; animation: blink 1.5s infinite 1s;"></div>
                             </div>
                         </div>
                     </div>
@@ -123,7 +113,7 @@
         </section>
 
         <!-- Apple-style Services Section -->
-        <section style="padding: 8rem 2rem; background: #FBFBFD;">
+        <section style="padding: 6rem 2rem 8rem 2rem; background: #FBFBFD;">
             <div style="max-width: 1200px; margin: 0 auto;">
                 <div class="scroll-reveal" style="text-align: center; margin-bottom: 4rem;">
                     <h2 class="display-medium" style="margin-bottom: 1rem;">Onze AI Diensten</h2>
@@ -133,7 +123,6 @@
                 <div class="bento-grid">
                     <!-- Main Showcase -->
                     <div class="bento-item large scroll-reveal">
-                        <div class="service-badge">Focus</div>
                         <div style="margin-bottom: 2rem;">
                             <div style="width: 64px; height: 64px; background: #E7F3FF; border-radius: 18px; display: flex; align-items: center; justify-content: center; margin-bottom: 1.5rem;">
                                 <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#007AFF" stroke-width="1.5">
@@ -172,11 +161,11 @@
                                 <ul style="list-style: none; padding: 0; margin: 0;">
                                     <li style="padding: 4px 0; display: flex; align-items: center; gap: 12px; font-size: 14px; color: #86868B;">
                                         <span style="width: 6px; height: 6px; background: #34C759; border-radius: 50%;"></span>
-                                        Tot 80% tijdsbesparing op routine taken
+                                        Aanzienlijke tijdsbesparing op routine taken
                                     </li>
                                     <li style="padding: 4px 0; display: flex; align-items: center; gap: 12px; font-size: 14px; color: #86868B;">
                                         <span style="width: 6px; height: 6px; background: #34C759; border-radius: 50%;"></span>
-                                        24/7 beschikbaarheid en consistente kwaliteit
+                                        Continue beschikbaarheid en consistente kwaliteit
                                     </li>
                                     <li style="padding: 4px 0; display: flex; align-items: center; gap: 12px; font-size: 14px; color: #86868B;">
                                         <span style="width: 6px; height: 6px; background: #34C759; border-radius: 50%;"></span>
@@ -205,7 +194,6 @@
 
                     <!-- Custom Solutions -->
                     <div class="bento-item medium scroll-reveal">
-                        <div class="service-badge">Focus</div>
                         <div style="width: 56px; height: 56px; background: #FFF0F6; border-radius: 16px; display: flex; align-items: center; justify-content: center; margin-bottom: 1.5rem;">
                             <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#EC4899" stroke-width="1.5">
                                 <path d="M12 20a8 8 0 1 0 0-16 8 8 0 0 0 0 16ZM3 10h4m6-6v4m6 2h4M7 19l3-3m6-6l3-3"/>
@@ -236,8 +224,8 @@
         </section>
 
         <!-- Hexagonal Workshop Formats -->
-        <section style="padding: 8rem 0; background: linear-gradient(135deg, #F8FAFC 0%, #E7F3FF 100%);">
-            <div style="max-width: 1200px; margin: 0 auto; padding: 0 2rem;">
+        <section style="padding: 6rem 0 8rem 0; background: linear-gradient(135deg, #F8FAFC 0%, #E7F3FF 100%);">
+            <div style="max-width: 1400px; margin: 0 auto; padding: 0 2rem;">
                 <div class="section-header scroll-reveal" style="text-align: center; margin-bottom: 4rem;">
                     <h2 class="section-title text-gradient">Workshop Formats</h2>
                     <p class="section-subtitle">Innovatieve formats voor maximale impact</p>
@@ -248,26 +236,26 @@
                         <div class="hex-shape"></div>
                         <div class="hex-content">
                             <div style="font-size: 2rem; margin-bottom: 1rem;">🎓</div>
-                            <h4 style="margin-bottom: 0.5rem;">Kennismaking</h4>
-                            <p style="font-size: 0.9rem; margin: 0;">Introductie met ons en onze werkzaamheden</p>
+                            <h4 style="margin-bottom: 0.5rem;">Basis Workshop AI</h4>
+                            <p style="font-size: 0.9rem; margin: 0;">Introductie tot AI concepten en mogelijkheden voor uw organisatie</p>
                         </div>
                     </div>
 
                     <div class="hex-item scroll-reveal">
                         <div class="hex-shape"></div>
                         <div class="hex-content">
-                            <div style="font-size: 2rem; margin-bottom: 1rem;">🔧</div>
-                            <h4 style="margin-bottom: 0.5rem;">Hands-on</h4>
-                            <p style="font-size: 0.9rem; margin: 0;">Praktische implementatie</p>
+                            <div style="font-size: 2rem; margin-bottom: 1rem;">🛠️</div>
+                            <h4 style="margin-bottom: 0.5rem;">Geavanceerde AI Tools Workshop</h4>
+                            <p style="font-size: 0.9rem; margin: 0;">Hands-on training met professionele AI tools en platformen</p>
                         </div>
                     </div>
 
                     <div class="hex-item scroll-reveal">
                         <div class="hex-shape"></div>
                         <div class="hex-content">
-                            <div style="font-size: 2rem; margin-bottom: 1rem;">🚀</div>
-                            <h4 style="margin-bottom: 0.5rem;">Expert Level</h4>
-                            <p style="font-size: 0.9rem; margin: 0;">Meerdaagse training</p>
+                            <div style="font-size: 2rem; margin-bottom: 1rem;">🤝</div>
+                            <h4 style="margin-bottom: 0.5rem;">AI Agents Workshop</h4>
+                            <p style="font-size: 0.9rem; margin: 0;">Leer intelligent agents bouwen en implementeren</p>
                         </div>
                     </div>
 
@@ -275,17 +263,17 @@
                         <div class="hex-shape"></div>
                         <div class="hex-content">
                             <div style="font-size: 2rem; margin-bottom: 1rem;">🎯</div>
-                            <h4 style="margin-bottom: 0.5rem;">Maatwerk</h4>
-                            <p style="font-size: 0.9rem; margin: 0;">Custom oplossingen</p>
+                            <h4 style="margin-bottom: 0.5rem;">Maatwerk Training</h4>
+                            <p style="font-size: 0.9rem; margin: 0;">Specifieke training aangepast aan uw sector en behoeften</p>
                         </div>
                     </div>
 
                     <div class="hex-item scroll-reveal">
                         <div class="hex-shape"></div>
                         <div class="hex-content">
-                            <div style="font-size: 2rem; margin-bottom: 1rem;">📊</div>
-                            <h4 style="margin-bottom: 0.5rem;">Analyse</h4>
-                            <p style="font-size: 0.9rem; margin: 0;">Impact assessment</p>
+                            <div style="font-size: 2rem; margin-bottom: 1rem;">📋</div>
+                            <h4 style="margin-bottom: 0.5rem;">Strategie Sessie</h4>
+                            <p style="font-size: 0.9rem; margin: 0;">AI roadmap ontwikkeling voor uw organisatie</p>
                         </div>
                     </div>
                 </div>
@@ -293,8 +281,8 @@
         </section>
 
         <!-- Floating Timeline Process -->
-        <section class="floating-timeline">
-            <div style="max-width: 1200px; margin: 0 auto; padding: 0 2rem;">
+        <section class="floating-timeline" style="padding: 6rem 0 8rem 0;">
+            <div style="max-width: 1400px; margin: 0 auto; padding: 0 2rem;">
                 <div class="section-header scroll-reveal" style="text-align: center; margin-bottom: 4rem;">
                     <h2 class="section-title text-gradient">Ons Proces</h2>
                     <p class="section-subtitle">Van concept tot implementatie in 3 stappen</p>
