@@ -316,7 +316,6 @@ body {
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
-    animation: gradientFlow 4s ease-in-out infinite;
 }
 
 @keyframes gradientFlow {
