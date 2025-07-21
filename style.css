@@ -1972,14 +1972,15 @@ html {
     height: 100%;
     pointer-events: none;
     z-index: 0;
-    opacity: 0.03;
+    opacity: 0.12;
     background: 
-        radial-gradient(circle at 20% 50%, rgba(0, 122, 255, 0.4) 0%, transparent 50%),
-        radial-gradient(circle at 80% 50%, rgba(88, 86, 214, 0.4) 0%, transparent 50%),
-        radial-gradient(circle at 50% 20%, rgba(0, 212, 255, 0.3) 0%, transparent 50%),
-        radial-gradient(circle at 50% 80%, rgba(52, 199, 89, 0.3) 0%, transparent 50%);
-    background-size: 200% 200%;
-    animation: gradientShift 20s ease-in-out infinite;
+        radial-gradient(ellipse 800px 600px at 20% 40%, rgba(0, 122, 255, 0.3) 0%, transparent 40%),
+        radial-gradient(ellipse 600px 800px at 80% 60%, rgba(88, 86, 214, 0.25) 0%, transparent 40%),
+        radial-gradient(ellipse 700px 500px at 60% 20%, rgba(0, 212, 255, 0.2) 0%, transparent 45%),
+        radial-gradient(ellipse 500px 700px at 40% 80%, rgba(52, 199, 89, 0.2) 0%, transparent 45%);
+    background-size: 150% 150%;
+    animation: gradientShift 25s ease-in-out infinite;
+    filter: blur(40px);
 }
 
 @keyframes gradientShift {
@@ -1987,17 +1988,21 @@ html {
         background-position: 0% 50%;
         transform: scale(1) rotate(0deg);
     }
-    25% {
-        background-position: 50% 30%;
-        transform: scale(1.1) rotate(1deg);
+    20% {
+        background-position: 30% 20%;
+        transform: scale(1.15) rotate(2deg);
     }
-    50% {
-        background-position: 100% 50%;
-        transform: scale(1.05) rotate(-1deg);
+    40% {
+        background-position: 70% 60%;
+        transform: scale(1.1) rotate(-1deg);
     }
-    75% {
-        background-position: 50% 70%;
-        transform: scale(1.08) rotate(0.5deg);
+    60% {
+        background-position: 100% 30%;
+        transform: scale(1.2) rotate(1deg);
+    }
+    80% {
+        background-position: 40% 80%;
+        transform: scale(1.05) rotate(-2deg);
     }
 }
 

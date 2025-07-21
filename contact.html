@@ -7,8 +7,76 @@
     <meta name="description" content="Neem contact op met De CyberConsultant voor AI automatisering en cybersecurity oplossingen voor het MKB.">
     <link rel="stylesheet" href="style.css">
     <style>
+<<<<<<< HEAD
         /* Contact Page Specific Styles */
         .contact-hero {
+=======
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Inter', system-ui, sans-serif;
+            min-height: 100vh;
+            background: #ffffff;
+            color: #1D1D1F;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding-top: 100px;
+        }
+
+        .dashboard-nav {
+            position: fixed;
+            top: 2rem;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(245, 245, 247, 0.85);
+            backdrop-filter: blur(15px);
+            border: 1px solid rgba(0, 0, 0, 0.08);
+            border-radius: 50px;
+            padding: 0.8rem 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            z-index: 1000;
+            font-family: 'JetBrains Mono', monospace;
+        }
+
+        .nav-link {
+            color: #555555;
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+            padding: 0.3rem 0.5rem;
+            border-radius: 8px;
+        }
+
+        .nav-link:hover {
+            color: #0056b3;
+            background-color: rgba(255, 255, 255, 0.2);
+            -webkit-backdrop-filter: blur(5px);
+            backdrop-filter: blur(5px);
+            border: 1px solid rgba(220, 220, 220, 0.5);
+        }
+        
+        .nav-title {
+            color: #36454F;
+            font-weight: 600;
+            font-size: 1rem;
+        }
+
+        .contact-container {
+            width: 100%;
+            max-width: 900px;
+            padding: 2rem;
+>>>>>>> a46f6ffde9e8d00de941ad22b844c8dcd00f9a17
             text-align: center;
             padding: 6rem 2rem 4rem;
             max-width: 800px;
@@ -18,6 +86,7 @@
         .contact-hero h1 {
             font-size: 3rem;
             font-weight: 700;
+<<<<<<< HEAD
             color: #1D1D1F;
             margin-bottom: 1rem;
             letter-spacing: -1px;
@@ -26,6 +95,20 @@
         .contact-hero p {
             font-size: 1.25rem;
             color: #666666;
+=======
+            color: #36454F;
+            margin-bottom: 1rem;
+            letter-spacing: -1px;
+        }
+        
+        .page-subtitle {
+            font-size: 1.1rem;
+            color: #555555;
+            margin-bottom: 3rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+>>>>>>> a46f6ffde9e8d00de941ad22b844c8dcd00f9a17
             line-height: 1.6;
         }
 
@@ -39,6 +122,7 @@
             align-items: start;
         }
 
+<<<<<<< HEAD
         /* Contact Form */
         .contact-form-section {
             background: #F5F5F7;
@@ -170,6 +254,86 @@
             width: 18px;
             height: 18px;
             opacity: 0.7;
+=======
+        .contact-card {
+            background: #F9F9F9;
+            border: 1px solid #E0E0E0;
+            border-radius: 16px;
+            padding: 2rem;
+            text-align: left;
+            transition: all 0.3s cubic-bezier(0.25, 0.1, 0.25, 1);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        }
+
+        .contact-card:hover {
+            transform: translateY(-5px) scale(1.02);
+            background-color: rgba(255, 255, 255, 0.2);
+            -webkit-backdrop-filter: blur(5px);
+            backdrop-filter: blur(5px);
+            border: 1px solid rgba(220, 220, 220, 0.7);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+        }
+
+        .contact-card h3 {
+            font-size: 1.75rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            color: #ffffff;
+        }
+        
+        .contact-card .ai-name {
+            background: linear-gradient(135deg, #00ffff, #007aff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-shadow: 0 0 30px rgba(0, 255, 255, 0.5);
+        }
+
+        .contact-card .cyber-name {
+            background: linear-gradient(135deg, #ff1493, #ff4500);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-shadow: 0 0 30px rgba(255, 20, 147, 0.5);
+        }
+
+
+        .contact-info p {
+            font-size: 1rem;
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: 0.8rem;
+            display: flex;
+            align-items: center;
+        }
+        
+        .contact-info p strong {
+            font-weight: 500;
+            color: rgba(255, 255, 255, 0.9);
+            min-width: 80px;
+        }
+
+        .contact-info a {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            transition: all 0.3s ease;
+            border-radius: 4px;
+        }
+
+        .contact-info a:hover {
+            color: #00ffff;
+            background-color: rgba(0, 255, 255, 0.1);
+            -webkit-backdrop-filter: blur(3px);
+            backdrop-filter: blur(3px);
+            padding: 0.1rem 0.3rem;
+        }
+        
+        .icon {
+            width: 18px;
+            height: 18px;
+            margin-right: 10px;
+            opacity: 0.8;
+            stroke: rgba(255, 255, 255, 0.8);
+>>>>>>> a46f6ffde9e8d00de941ad22b844c8dcd00f9a17
         }
 
         /* Response time indicator */
@@ -221,6 +385,7 @@
         </a>
     </nav>
 
+<<<<<<< HEAD
     <div class="contact-hero">
         <h1>Laten we kennismaken</h1>
         <p>Een goed gesprek is de eerste stap. Vertel ons over uw uitdaging en wij denken graag mee.</p>
@@ -331,6 +496,40 @@
                 <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
                     <a href="ai.html" class="cta-button">AI Diensten <span class="arrow">→</span></a>
                     <a href="cyber.html" class="cta-button">Cyber Diensten <span class="arrow">→</span></a>
+=======
+    <div class="contact-container">
+        <h1 class="page-title">Neem Contact Op</h1>
+        <p class="page-subtitle">Als mede-eigenaren van De CyberConsultant staan wij klaar om uw vragen te beantwoorden en samen te ontdekken hoe wij uw organisatie kunnen helpen met AI en Cybersecurity uitdagingen.</p>
+        
+        <div class="contact-grid">
+            <div class="contact-card">
+                <h3 class="ai-name">Lev Ankone</h3>
+                <p style="color: #666; font-size: 0.9rem; margin-bottom: 1.5rem; font-style: italic;">Mede-eigenaar De CyberConsultant</p>
+                <div class="contact-info">
+                    <p>
+                        <svg class="icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" stroke="currentColor"><path d="M3.53049 7.66C3.84049 4.66 6.15049 2.34 9.16049 2.04C12.9005 1.65 16.1905 4.94 15.8105 8.68C15.5705 10.95 14.0905 12.94 12.0005 13.68C11.7405 13.77 11.5005 13.95 11.2505 14.03L10.2505 14.38C7.50049 15.37 5.83049 18.69 7.50049 21.08" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/><path d="M10.5 17C10.5 17.83 11.17 18.5 12 18.5C12.83 18.5 13.5 17.83 13.5 17C13.5 16.17 12.83 15.5 12 15.5C11.17 15.5 10.5 16.17 10.5 17Z" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/><path d="M17.5 7C17.5 7.83 18.17 8.5 19 8.5C19.83 8.5 20.5 7.83 20.5 7C20.5 6.17 19.83 5.5 19 5.5C18.17 5.5 17.5 6.17 17.5 7Z" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                        <strong>Telefoon:</strong> <a href="tel:+31648512059">+31 6 48512059</a>
+                    </p>
+                    <p>
+                        <svg class="icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" stroke="currentColor"><path d="M17 20.5H7C4 20.5 2 19 2 15.5V8.5C2 5 4 3.5 7 3.5H17C20 3.5 22 5 22 8.5V15.5C22 19 20 20.5 17 20.5Z" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/><path d="M17 9L13.87 11.5C12.84 12.32 11.15 12.32 10.12 11.5L7 9" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                        <strong>E-mail:</strong> <a href="mailto:l.ankone@decyberconsultant.nl">l.ankone@decyberconsultant.nl</a>
+                    </p>
+                </div>
+            </div>
+
+            <div class="contact-card">
+                <h3 class="cyber-name">Melle Jorna</h3>
+                <p style="color: #666; font-size: 0.9rem; margin-bottom: 1.5rem; font-style: italic;">Mede-eigenaar De CyberConsultant</p>
+                <div class="contact-info">
+                     <p>
+                        <svg class="icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" stroke="currentColor"><path d="M3.53049 7.66C3.84049 4.66 6.15049 2.34 9.16049 2.04C12.9005 1.65 16.1905 4.94 15.8105 8.68C15.5705 10.95 14.0905 12.94 12.0005 13.68C11.7405 13.77 11.5005 13.95 11.2505 14.03L10.2505 14.38C7.50049 15.37 5.83049 18.69 7.50049 21.08" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/><path d="M10.5 17C10.5 17.83 11.17 18.5 12 18.5C12.83 18.5 13.5 17.83 13.5 17C13.5 16.17 12.83 15.5 12 15.5C11.17 15.5 10.5 16.17 10.5 17Z" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/><path d="M17.5 7C17.5 7.83 18.17 8.5 19 8.5C19.83 8.5 20.5 7.83 20.5 7C20.5 6.17 19.83 5.5 19 5.5C18.17 5.5 17.5 6.17 17.5 7Z" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                        <strong>Telefoon:</strong> <a href="tel:+31641289756">+31 6 41289756</a>
+                    </p>
+                    <p>
+                        <svg class="icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" stroke="currentColor"><path d="M17 20.5H7C4 20.5 2 19 2 15.5V8.5C2 5 4 3.5 7 3.5H17C20 3.5 22 5 22 8.5V15.5C22 19 20 20.5 17 20.5Z" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/><path d="M17 9L13.87 11.5C12.84 12.32 11.15 12.32 10.12 11.5L7 9" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                        <strong>E-mail:</strong> <a href="mailto:m.jorna@decyberconsultant.nl">m.jorna@decyberconsultant.nl</a>
+                    </p>
+>>>>>>> a46f6ffde9e8d00de941ad22b844c8dcd00f9a17
                 </div>
             </div>
         </div>
