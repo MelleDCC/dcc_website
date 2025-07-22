@@ -3,690 +3,982 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>De CyberConsultant - AI Solutions</title>
-    <meta name="description" content="Enterprise AI solutions for Dutch businesses. Custom AI development, process automation, and strategic consulting.">
-    <link rel="stylesheet" href="style.css">
+    <title>AI Oplossingen - De CyberConsultant</title>
+    <meta name="description" content="AI automatisering voor het Nederlandse MKB. Van workshops tot volledige implementatie. Verhoog uw productiviteit met slimme technologie.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: linear-gradient(135deg, #FAFBFF 0%, #F0F7FF 100%);
+            color: #1A1A1A;
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+            overflow-x: hidden;
+        }
+
+        /* Ambient Background */
+        .ambient-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+            opacity: 0.4;
+            background: 
+                radial-gradient(circle at 20% 80%, rgba(59, 130, 246, 0.04) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(29, 78, 216, 0.03) 0%, transparent 50%),
+                radial-gradient(circle at 40% 40%, rgba(16, 185, 129, 0.02) 0%, transparent 50%);
+            animation: ambientFlow 25s ease-in-out infinite;
+        }
+
+        @keyframes ambientFlow {
+            0%, 100% { transform: scale(1) rotate(0deg); opacity: 0.4; }
+            50% { transform: scale(1.1) rotate(3deg); opacity: 0.6; }
+        }
+
+        /* Navigation */
+        .nav {
+            position: fixed;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 1000;
+            background: rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(40px) saturate(180%);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            border-radius: 20px;
+            padding: 12px 20px;
+            display: flex;
+            align-items: center;
+            gap: 32px;
+            box-shadow: 
+                0 8px 32px rgba(0, 0, 0, 0.04),
+                inset 0 1px 0 rgba(255, 255, 255, 0.2);
+            transition: all 0.4s cubic-bezier(0.25, 0.1, 0.25, 1);
+        }
+
+        .nav:hover {
+            background: rgba(255, 255, 255, 0.12);
+            box-shadow: 
+                0 12px 48px rgba(0, 0, 0, 0.08),
+                inset 0 1px 0 rgba(255, 255, 255, 0.3);
+        }
+
+        .nav-logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-weight: 600;
+            color: #1A1A1A;
+            text-decoration: none;
+            font-size: 15px;
+            letter-spacing: -0.3px;
+        }
+
+        .nav-logo img {
+            width: 28px;
+            height: 28px;
+            border-radius: 6px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 20px;
+        }
+
+        .nav-link {
+            color: rgba(26, 26, 26, 0.7);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 14px;
+            transition: all 0.3s cubic-bezier(0.25, 0.1, 0.25, 1);
+            padding: 8px 14px;
+            border-radius: 10px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .nav-link.active {
+            color: #3B82F6;
+            background: rgba(59, 130, 246, 0.08);
+            backdrop-filter: blur(10px);
+        }
+
+        .nav-link::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+            transition: left 0.5s ease;
+        }
+
+        .nav-link:hover::before {
+            left: 100%;
+        }
+
+        .nav-link:hover {
+            color: #1A1A1A;
+            background: rgba(255, 255, 255, 0.08);
+        }
+
+        .nav-cta {
+            background: linear-gradient(135deg, #1A1A1A 0%, #374151 100%);
+            color: white;
+            padding: 10px 18px;
+            border-radius: 12px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 14px;
+            transition: all 0.3s cubic-bezier(0.25, 0.1, 0.25, 1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .nav-cta:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+        }
+
+        /* Main Content */
+        .main-content {
+            position: relative;
+            z-index: 1;
+            padding-top: 100px;
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 80px 24px;
+            text-align: center;
+            max-width: 1000px;
+            margin: 0 auto;
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(40px) saturate(180%);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 32px;
+            margin-bottom: 80px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(59, 130, 246, 0.02) 0%, rgba(29, 78, 216, 0.01) 100%);
+            border-radius: 32px;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(59, 130, 246, 0.08);
+            backdrop-filter: blur(20px) saturate(180%);
+            color: #3B82F6;
+            padding: 8px 16px;
+            border-radius: 24px;
+            font-size: 13px;
+            font-weight: 500;
+            margin-bottom: 32px;
+            letter-spacing: 0.2px;
+            border: 1px solid rgba(59, 130, 246, 0.15);
+        }
+
+        .badge-dot {
+            width: 4px;
+            height: 4px;
+            border-radius: 50%;
+            background: currentColor;
+            animation: pulse 3s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.6; transform: scale(1.3); }
+        }
+
+        .hero-title {
+            font-size: clamp(48px, 7vw, 64px);
+            font-weight: 700;
+            margin-bottom: 24px;
+            letter-spacing: -0.04em;
+            line-height: 1.1;
+        }
+
+        .hero-title .gradient {
+            background: linear-gradient(135deg, #3B82F6 0%, #1D4ED8 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero-subtitle {
+            font-size: 20px;
+            color: rgba(26, 26, 26, 0.7);
+            margin-bottom: 40px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            font-weight: 400;
+            letter-spacing: -0.2px;
+        }
+
+        .hero-cta {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: linear-gradient(135deg, #3B82F6 0%, #1D4ED8 100%);
+            color: white;
+            padding: 16px 32px;
+            border-radius: 16px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 16px;
+            transition: all 0.4s cubic-bezier(0.25, 0.1, 0.25, 1);
+            box-shadow: 
+                0 8px 32px rgba(59, 130, 246, 0.25),
+                inset 0 1px 0 rgba(255, 255, 255, 0.2);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-cta::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+            transition: left 0.6s ease;
+        }
+
+        .hero-cta:hover::before {
+            left: 100%;
+        }
+
+        .hero-cta:hover {
+            transform: translateY(-2px);
+            box-shadow: 
+                0 16px 48px rgba(59, 130, 246, 0.35),
+                inset 0 1px 0 rgba(255, 255, 255, 0.3);
+        }
+
+        /* Stats */
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 24px;
+            max-width: 1000px;
+            margin: 0 auto 80px;
+            padding: 0 24px;
+        }
+
+        .stat {
+            text-align: center;
+            background: rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(40px) saturate(180%);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            padding: 32px 24px;
+            border-radius: 20px;
+            transition: all 0.3s ease;
+            box-shadow: 
+                0 8px 32px rgba(0, 0, 0, 0.04),
+                inset 0 1px 0 rgba(255, 255, 255, 0.1);
+        }
+
+        .stat:hover {
+            background: rgba(255, 255, 255, 0.12);
+            transform: translateY(-4px);
+            box-shadow: 
+                0 16px 48px rgba(0, 0, 0, 0.08),
+                inset 0 1px 0 rgba(255, 255, 255, 0.2);
+        }
+
+        .stat-number {
+            font-size: 32px;
+            font-weight: 700;
+            color: #3B82F6;
+            margin-bottom: 8px;
+            letter-spacing: -0.02em;
+        }
+
+        .stat-label {
+            font-size: 14px;
+            color: rgba(26, 26, 26, 0.6);
+            font-weight: 500;
+        }
+
+        /* Services */
+        .services {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px 80px;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 64px;
+        }
+
+        .section-title {
+            font-size: 40px;
+            font-weight: 700;
+            margin-bottom: 16px;
+            color: #1A1A1A;
+            letter-spacing: -0.02em;
+        }
+
+        .section-subtitle {
+            font-size: 18px;
+            color: rgba(26, 26, 26, 0.6);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 24px;
+            margin-bottom: 64px;
+        }
+
+        .service-card {
+            background: rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(40px) saturate(180%);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            border-radius: 24px;
+            padding: 40px;
+            transition: all 0.4s cubic-bezier(0.25, 0.1, 0.25, 1);
+            position: relative;
+            overflow: hidden;
+            box-shadow: 
+                0 8px 32px rgba(0, 0, 0, 0.04),
+                inset 0 1px 0 rgba(255, 255, 255, 0.1);
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(59, 130, 246, 0.03), transparent);
+            transition: left 0.8s ease;
+        }
+
+        .service-card:hover::before {
+            left: 100%;
+        }
+
+        .service-card:hover {
+            transform: translateY(-8px);
+            background: rgba(255, 255, 255, 0.12);
+            box-shadow: 
+                0 20px 60px rgba(0, 0, 0, 0.08),
+                inset 0 1px 0 rgba(255, 255, 255, 0.2);
+            border-color: rgba(59, 130, 246, 0.2);
+        }
+
+        .service-icon {
+            width: 64px;
+            height: 64px;
+            background: rgba(59, 130, 246, 0.08);
+            backdrop-filter: blur(20px);
+            border-radius: 18px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 24px;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(59, 130, 246, 0.15);
+        }
+
+        .service-card:hover .service-icon {
+            background: rgba(59, 130, 246, 0.12);
+            transform: translateY(-2px) scale(1.05);
+        }
+
+        .service-icon svg {
+            width: 28px;
+            height: 28px;
+            color: #3B82F6;
+        }
+
+        .service-title {
+            font-size: 24px;
+            font-weight: 600;
+            margin-bottom: 12px;
+            color: #1A1A1A;
+            letter-spacing: -0.02em;
+        }
+
+        .service-description {
+            color: rgba(26, 26, 26, 0.7);
+            margin-bottom: 24px;
+            line-height: 1.6;
+        }
+
+        .service-features {
+            list-style: none;
+            margin-bottom: 24px;
+        }
+
+        .service-features li {
+            padding: 8px 0;
+            color: rgba(26, 26, 26, 0.6);
+            font-size: 14px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .service-features li::before {
+            content: "";
+            width: 16px;
+            height: 16px;
+            background: rgba(16, 185, 129, 0.15);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 10px;
+            color: #10B981;
+            flex-shrink: 0;
+        }
+
+        .service-cta {
+            color: #3B82F6;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 14px;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.3s ease;
+            padding: 8px 0;
+        }
+
+        .service-cta:hover {
+            color: #1D4ED8;
+            gap: 12px;
+        }
+
+        /* Process */
+        .process {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(40px) saturate(180%);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 32px;
+            padding: 80px 24px;
+            max-width: 1200px;
+            margin: 0 auto 80px;
+        }
+
+        .process-steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 32px;
+            margin-top: 64px;
+        }
+
+        .process-step {
+            text-align: center;
+            position: relative;
+        }
+
+        .step-number {
+            width: 64px;
+            height: 64px;
+            background: linear-gradient(135deg, #3B82F6 0%, #1D4ED8 100%);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 24px;
+            margin: 0 auto 24px;
+            box-shadow: 
+                0 8px 32px rgba(59, 130, 246, 0.25),
+                inset 0 1px 0 rgba(255, 255, 255, 0.2);
+        }
+
+        .step-title {
+            font-size: 20px;
+            font-weight: 600;
+            margin-bottom: 12px;
+            color: #1A1A1A;
+            letter-spacing: -0.02em;
+        }
+
+        .step-description {
+            color: rgba(26, 26, 26, 0.6);
+            font-size: 14px;
+            line-height: 1.6;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            background: linear-gradient(135deg, #1A1A1A 0%, #374151 100%);
+            color: white;
+            padding: 80px 24px;
+            text-align: center;
+            border-radius: 32px;
+            max-width: 1000px;
+            margin: 0 auto;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(59, 130, 246, 0.1) 0%, transparent 50%);
+            border-radius: 32px;
+        }
+
+        .cta-container {
+            position: relative;
+            z-index: 2;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .cta-title {
+            font-size: 40px;
+            font-weight: 700;
+            margin-bottom: 16px;
+            letter-spacing: -0.02em;
+        }
+
+        .cta-subtitle {
+            font-size: 18px;
+            opacity: 0.9;
+            margin-bottom: 40px;
+        }
+
+        .cta-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(20px) saturate(180%);
+            color: white;
+            padding: 16px 32px;
+            border-radius: 16px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 16px;
+            transition: all 0.3s ease;
+            margin-bottom: 32px;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+        }
+
+        .cta-button:hover {
+            background: rgba(255, 255, 255, 0.15);
+            transform: translateY(-2px);
+            box-shadow: 0 16px 48px rgba(255, 255, 255, 0.1);
+        }
+
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 32px;
+            flex-wrap: wrap;
+            margin-top: 32px;
+        }
+
+        .contact-link {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            font-size: 14px;
+            transition: color 0.2s;
+            padding: 8px 16px;
+            border-radius: 12px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .contact-link:hover {
+            color: white;
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        .contact-icon {
+            width: 16px;
+            height: 16px;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav {
+                top: 16px;
+                left: 16px;
+                right: 16px;
+                transform: none;
+                padding: 10px 16px;
+                gap: 16px;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .main-content {
+                padding-top: 80px;
+            }
+
+            .hero {
+                padding: 60px 24px;
+                margin-bottom: 60px;
+                border-radius: 24px;
+            }
+
+            .hero-title {
+                font-size: 40px;
+            }
+
+            .hero-subtitle {
+                font-size: 18px;
+            }
+
+            .stats {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 16px;
+                margin-bottom: 60px;
+            }
+
+            .services {
+                padding: 0 24px 60px;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .service-card {
+                padding: 32px 24px;
+            }
+
+            .process {
+                padding: 60px 24px;
+                margin-bottom: 60px;
+                border-radius: 24px;
+            }
+
+            .process-steps {
+                grid-template-columns: 1fr;
+                gap: 32px;
+            }
+
+            .cta-section {
+                padding: 60px 24px;
+                border-radius: 24px;
+            }
+
+            .cta-title {
+                font-size: 32px;
+            }
+
+            .contact-info {
+                flex-direction: column;
+                gap: 16px;
+            }
+        }
+    </style>
 </head>
 <body>
-    <div class="ai-ultra-page">
-        <!-- Ambient Intelligence Layer -->
-        <div class="ambient-intelligence">
-            <canvas id="aiCanvas"></canvas>
-            <div class="light-rays">
-                <div class="ray" style="--delay: 0s"></div>
-                <div class="ray" style="--delay: 1s"></div>
-                <div class="ray" style="--delay: 2s"></div>
-            </div>
+    <!-- Ambient Background -->
+    <div class="ambient-bg"></div>
+
+    <!-- Navigation -->
+    <nav class="nav">
+        <a href="index.html" class="nav-logo">
+            <img src="De Cyberconsultant (100 x 100 px) (400 x 400 px).png" alt="De CyberConsultant">
+            De CyberConsultant
+        </a>
+        <div class="nav-links">
+            <a href="ai.html" class="nav-link active">AI Oplossingen</a>
+            <a href="cyber.html" class="nav-link">Cybersecurity</a>
         </div>
+        <a href="contact.html" class="nav-cta">Contact</a>
+    </nav>
 
-        <!-- Modern Revolutionary Navbar -->
-        <nav class="modern-nav">
-            <a href="index.html" class="nav-logo-modern">
-                <img src="De Cyberconsultant (100 x 100 px) (400 x 400 px).png" alt="De CyberConsultant" />
-                <span class="nav-brand-text">De CyberConsultant</span>
-            </a>
-            
-            <div class="nav-links-modern">
-                <a href="ai.html" class="nav-link-modern active-page">AI Solutions</a>
-                <a href="cyber.html" class="nav-link-modern">Cybersecurity</a>
-            </div>
-            
-            <a href="contact.html" class="nav-cta-modern">
-                <span>Contact</span>
-                <svg class="nav-cta-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <path d="M5 12h14M12 5l7 7-7 7"/>
-                </svg>
-            </a>
-        </nav>
-
-        <!-- Revolutionary Hero -->
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Hero Section -->
         <section class="hero">
-            <div class="hero-container">
-                <div class="hero-content">
-                    <div class="hero-label magnetic-button">
-                        <span class="label-dot"></span>
-                        <span>AI Innovation Partner</span>
+            <div class="hero-content">
+                <div class="hero-badge">
+                    <div class="badge-dot"></div>
+                    AI Automatisering voor het MKB
+                </div>
+                
+                <h1 class="hero-title">
+                    Verhoog uw productiviteit met <span class="gradient">slimme AI</span>
+                </h1>
+                
+                <p class="hero-subtitle">
+                    Van eenvoudige automatisering tot complexe AI-agents. Ontdek hoe kunstmatige intelligentie uw bedrijf kan transformeren.
+                </p>
+
+                <a href="contact.html" class="hero-cta">
+                    Start uw AI-reis
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M5 12h14M12 5l7 7-7 7"/>
+                    </svg>
+                </a>
+            </div>
+        </section>
+
+        <!-- Stats -->
+        <section class="stats">
+            <div class="stat">
+                <div class="stat-number">2021</div>
+                <div class="stat-label">Actief sinds</div>
+            </div>
+            <div class="stat">
+                <div class="stat-number">MKB</div>
+                <div class="stat-label">Onze focus</div>
+            </div>
+            <div class="stat">
+                <div class="stat-number">50+</div>
+                <div class="stat-label">Bedrijven geholpen</div>
+            </div>
+            <div class="stat">
+                <div class="stat-number">100%</div>
+                <div class="stat-label">Nederlandse aanpak</div>
+            </div>
+        </section>
+
+        <!-- Services -->
+        <section class="services">
+            <div class="section-header">
+                <h2 class="section-title">Onze AI Oplossingen</h2>
+                <p class="section-subtitle">
+                    Praktische AI-toepassingen die direct impact hebben op uw bedrijfsvoering
+                </p>
+            </div>
+
+            <div class="services-grid">
+                <!-- AI Workshops -->
+                <div class="service-card">
+                    <div class="service-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <path d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/>
+                        </svg>
                     </div>
-                    
-                    <h1 class="hero-title">
-                        <span class="line">Ontdek de kracht van</span>
-                        <span class="line text-gradient">intelligente automatisering</span>
-                        <span class="line">voor uw bedrijf</span>
-                    </h1>
-                    
-                    <p class="hero-description">
-                        Transformeer uw organisatie met op maat gemaakte AI-agents, agentic networks en slimme tools. 
-                        Van workshops tot volledige implementatie - wij begeleiden u naar een AI-gedreven toekomst.
+                    <h3 class="service-title">AI Workshops & Training</h3>
+                    <p class="service-description">
+                        Leer de mogelijkheden van AI kennen en ontdek hoe het uw bedrijf kan helpen. 
+                        Van basis tot gevorderd niveau.
                     </p>
-
-                    <div class="hero-actions">
-                        <a href="contact.html" class="btn-primary ai-cta">
-                            <span>Ontdek uw AI-potentieel</span>
-                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                                <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/>
-                            </svg>
-                        </a>
-                        <a href="#services" class="btn-secondary">
-                            <span>Bekijk onze expertise</span>
-                        </a>
-                    </div>
+                    <ul class="service-features">
+                        <li>Basis AI workshop (halve dag)</li>
+                        <li>Gevorderde AI training (hele dag)</li>
+                        <li>Maatwerk workshops voor teams</li>
+                        <li>Praktische oefeningen en voorbeelden</li>
+                        <li>Nederlandse tools en toepassingen</li>
+                    </ul>
+                    <a href="contact.html?service=ai-workshop" class="service-cta">
+                        Meer over workshops
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M5 12h14M12 5l7 7-7 7"/>
+                        </svg>
+                    </a>
                 </div>
 
-                <div class="hero-visual">
-                    <div class="professional-stats">
-                        <div style="background: rgba(255, 255, 255, 0.1); backdrop-filter: blur(20px); border-radius: 20px; padding: 2.5rem; border: 1px solid rgba(255, 255, 255, 0.2); box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);">
-                            <div style="text-align: center; margin-bottom: 2rem;">
-                                <h4 style="margin: 0 0 0.5rem 0; color: #1d1d1f; font-weight: 600; font-size: 1.2rem;">AI Implementaties</h4>
-                                <p style="margin: 0; color: #86868B; font-size: 0.9rem;">Praktische oplossingen voor het MKB</p>
-                            </div>
-                            
-                            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-bottom: 2rem;">
-                                <div style="background: rgba(255, 255, 255, 0.08); border-radius: 12px; padding: 1.5rem; border: 1px solid rgba(255, 255, 255, 0.1); text-align: center;">
-                                    <div style="color: #007AFF; font-size: 2rem; font-weight: 700; margin-bottom: 0.5rem;">2021</div>
-                                    <div style="color: #86868B; font-size: 0.85rem;">Actief sinds</div>
-                                </div>
-                                <div style="background: rgba(255, 255, 255, 0.08); border-radius: 12px; padding: 1.5rem; border: 1px solid rgba(255, 255, 255, 0.1); text-align: center;">
-                                    <div style="color: #34C759; font-size: 2rem; font-weight: 700; margin-bottom: 0.5rem;">MKB</div>
-                                    <div style="color: #86868B; font-size: 0.85rem;">Doelgroep</div>
-                                </div>
-                            </div>
-                            
-                            <div style="background: rgba(255, 255, 255, 0.08); border-radius: 12px; padding: 1.5rem; border: 1px solid rgba(255, 255, 255, 0.1);">
-                                <div style="text-align: center; margin-bottom: 1rem;">
-                                    <div style="color: #1d1d1f; font-weight: 600; margin-bottom: 0.5rem;">Diensten Portfolio</div>
-                                </div>
-                                <div style="display: flex; justify-content: space-between; gap: 1rem;">
-                                    <div style="text-align: center; flex: 1;">
-                                        <div style="color: #007AFF; font-size: 0.8rem; font-weight: 500;">Workshops</div>
-                                    </div>
-                                    <div style="text-align: center; flex: 1;">
-                                        <div style="color: #5856D6; font-size: 0.8rem; font-weight: 500;">AI Agents</div>
-                                    </div>
-                                    <div style="text-align: center; flex: 1;">
-                                        <div style="color: #34C759; font-size: 0.8rem; font-weight: 500;">Strategieën</div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                <!-- AI Implementatie -->
+                <div class="service-card">
+                    <div class="service-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <path d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"/>
+                            <path d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/>
+                        </svg>
                     </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Apple-style Services Section -->
-        <section class="services-section">
-            <div class="services-container">
-                <div class="scroll-reveal section-header">
-                    <h2 class="section-title">AI Expertise & Oplossingen</h2>
-                    <p class="section-subtitle">Van strategisch advies tot volledige AI-implementatie</p>
+                    <h3 class="service-title">AI Implementatie & Strategie</h3>
+                    <p class="service-description">
+                        Volledige begeleiding van AI-strategie tot implementatie. 
+                        Wij zorgen ervoor dat AI succesvol wordt ingevoerd in uw organisatie.
+                    </p>
+                    <ul class="service-features">
+                        <li>AI-strategie ontwikkeling</li>
+                        <li>Proces analyse en optimalisatie</li>
+                        <li>Tool selectie en configuratie</li>
+                        <li>Change management begeleiding</li>
+                        <li>Training van uw medewerkers</li>
+                    </ul>
+                    <a href="contact.html?service=ai-implementation" class="service-cta">
+                        Plan een gesprek
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M5 12h14M12 5l7 7-7 7"/>
+                        </svg>
+                    </a>
                 </div>
 
-                <div class="bento-grid">
-                    <!-- Agentic Networks -->
-                    <div class="bento-item large scroll-reveal">
-                        <div class="service-header">
-                            <div class="service-icon ai-icon-bg">
-                                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#007AFF" stroke-width="1.5">
-                                    <path d="M12 2L2 7v10c0 5.55 3.84 9.74 9 10.5 5.16-.76 9-4.95 9-10.5V7l-10-5z"/>
-                                    <path d="M9 12l2 2 4-4"/>
-                                </svg>
-                            </div>
-                            <h3 class="service-title">Agentic Networks Op Maat</h3>
-                            <p class="service-subtitle">Intelligente netwerken van samenhangende AI-agents</p>
-                        </div>
-                        
-                        <div class="service-content-grid">
-                            <div class="service-details">
-                                <p class="service-description">Complexe bedrijfsprocessen automatiseren met netwerken van gespecialiseerde AI-agents die naadloos samenwerken. Elke agent heeft zijn eigen expertise en samen vormen ze een krachtig, zelflerend systeem.</p>
-                                
-                                <h5 class="feature-title">Intelligente automatisering:</h5>
-                                <ul class="feature-list">
-                                    <li class="feature-item">
-                                        <span class="feature-dot ai-dot"></span>
-                                        Multi-agent workflows voor complexe processen
-                                    </li>
-                                    <li class="feature-item">
-                                        <span class="feature-dot ai-dot"></span>
-                                        Zelforganiserende taken en besluitvorming
-                                    </li>
-                                    <li class="feature-item">
-                                        <span class="feature-dot ai-dot"></span>
-                                        Real-time samenwerking tussen agents
-                                    </li>
-                                    <li class="feature-item">
-                                        <span class="feature-dot ai-dot"></span>
-                                        Adaptieve systemen die leren en verbeteren
-                                    </li>
-                                </ul>
-                                
-                                <h5 class="feature-title">Resultaat voor uw bedrijf:</h5>
-                                <ul class="feature-list">
-                                    <li class="feature-item">
-                                        <span class="feature-dot success-dot"></span>
-                                        Dramatische efficiëntieverbetering
-                                    </li>
-                                    <li class="feature-item">
-                                        <span class="feature-dot success-dot"></span>
-                                        24/7 autonome bedrijfsvoering
-                                    </li>
-                                    <li class="feature-item">
-                                        <span class="feature-dot success-dot"></span>
-                                        Schaalbaarheid en flexibiliteit
-                                    </li>
-                                </ul>
-                            </div>
-                            <div class="service-showcase">
-                                <div class="showcase-content">
-                                    <div class="showcase-icon">🤖</div>
-                                    <div class="showcase-title">Agentic Network</div>
-                                    <div class="showcase-subtitle">Intelligente samenwerking</div>
-                                </div>
-                            </div>
-                        </div>
+                <!-- AI Agents -->
+                <div class="service-card">
+                    <div class="service-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <path d="M13 10V3L4 14h7v7l9-11h-7z"/>
+                        </svg>
                     </div>
+                    <h3 class="service-title">Custom AI Agents</h3>
+                    <p class="service-description">
+                        Op maat gemaakte AI-agents die specifieke taken in uw bedrijf automatiseren. 
+                        Van klantenservice tot data-analyse.
+                    </p>
+                    <ul class="service-features">
+                        <li>Chatbots voor klantenservice</li>
+                        <li>Automatisering van e-mail afhandeling</li>
+                        <li>Data-analyse en rapportage agents</li>
+                        <li>Document verwerking automation</li>
+                        <li>Integratie met bestaande systemen</li>
+                    </ul>
+                    <a href="contact.html?service=ai-agents" class="service-cta">
+                        Ontdek mogelijkheden
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M5 12h14M12 5l7 7-7 7"/>
+                        </svg>
+                    </a>
+                </div>
 
-                    <!-- AI Tools -->
-                    <div class="bento-item medium scroll-reveal">
-                        <div class="service-icon purple-icon-bg">
-                            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#8B5CF6" stroke-width="1.5">
-                                <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/>
-                            </svg>
-                        </div>
-                        <h4 class="service-card-title">AI Tools & Platforms</h4>
-                        <p class="service-card-description">Kant-en-klare AI-oplossingen voor directe implementatie</p>
+                <!-- AI Consulting -->
+                <div class="service-card">
+                    <div class="service-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <path d="M7 11l5-5m0 0l5 5m-5-5v12"/>
+                        </svg>
                     </div>
-
-                    <!-- Advies & Implementatie -->
-                    <div class="bento-item medium scroll-reveal">
-                        <div class="service-icon pink-icon-bg">
-                            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#EC4899" stroke-width="1.5">
-                                <path d="M9 11H5a2 2 0 0 0-2 2v3a2 2 0 0 0 2 2h4m6-6V9a2 2 0 0 0-2-2H9a2 2 0 0 0-2 2v2a2 2 0 0 0 2 2h4a2 2 0 0 0 2-2z"/>
-                                <path d="M19 11V9a2 2 0 0 0-2-2h-4"/>
-                            </svg>
-                        </div>
-                        <h4 class="service-card-title">Advies & Implementatie</h4>
-                        <p class="service-card-description">Volledige begeleiding van strategie tot uitvoering</p>
-                    </div>
-
-                    <!-- Workshop Basis -->
-                    <div class="bento-item small scroll-reveal">
-                        <div class="stat-card">
-                            <div class="stat-icon">📚</div>
-                            <h5 class="stat-title">Basis AI</h5>
-                            <p class="stat-description">Workshop fundamenten</p>
-                        </div>
-                    </div>
-
-                    <!-- Workshop Advanced -->
-                    <div class="bento-item small scroll-reveal">
-                        <div class="stat-card">
-                            <div class="stat-icon">🎯</div>
-                            <h5 class="stat-title">Gevorderd</h5>
-                            <p class="stat-description">Workshop diepgaand</p>
-                        </div>
-                    </div>
+                    <h3 class="service-title">AI Advies & Consultancy</h3>
+                    <p class="service-description">
+                        Strategisch advies over AI-implementatie, tool selectie en organisatorische impact. 
+                        Maak de juiste keuzes voor uw bedrijf.
+                    </p>
+                    <ul class="service-features">
+                        <li>AI-readiness assessment</li>
+                        <li>ROI berekeningen en business cases</li>
+                        <li>Tool evaluatie en selectie</li>
+                        <li>Roadmap ontwikkeling</li>
+                        <li>Ongoing strategische begeleiding</li>
+                    </ul>
+                    <a href="contact.html?service=ai-consulting" class="service-cta">
+                        Vraag advies aan
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M5 12h14M12 5l7 7-7 7"/>
+                        </svg>
+                    </a>
                 </div>
             </div>
         </section>
 
-        <!-- Hexagonal Workshop Formats -->
-        <section class="workshop-section">
-            <div class="workshop-container">
-                <div class="section-header scroll-reveal">
-                    <h2 class="section-title text-gradient">AI Workshops & Training</h2>
-                    <p class="section-subtitle">Van basis tot expert - ontwikkel uw AI-vaardigheden</p>
+        <!-- Process -->
+        <section class="process">
+            <div class="section-header">
+                <h2 class="section-title">Onze Aanpak</h2>
+                <p class="section-subtitle">
+                    Een bewezen proces dat zorgt voor succesvolle AI-implementatie
+                </p>
+            </div>
+
+            <div class="process-steps">
+                <div class="process-step">
+                    <div class="step-number">1</div>
+                    <h3 class="step-title">Verkenning & Analyse</h3>
+                    <p class="step-description">
+                        We analyseren uw huidige processen en identificeren kansen voor AI-automatisering. 
+                        Samen stellen we prioriteiten en doelen vast.
+                    </p>
                 </div>
 
-                <div class="hex-grid">
-                    <div class="hex-item scroll-reveal">
-                        <div class="hex-shape"></div>
-                        <div class="hex-content">
-                            <div class="hex-icon">🌱</div>
-                            <h4 class="hex-title">Basis AI Workshop</h4>
-                            <p class="hex-description">Fundamentele AI-concepten, mogelijkheden en toepassingen voor uw sector</p>
-                        </div>
-                    </div>
+                <div class="process-step">
+                    <div class="step-number">2</div>
+                    <h3 class="step-title">Strategie & Planning</h3>
+                    <p class="step-description">
+                        Op basis van de analyse ontwikkelen we een concrete AI-strategie en roadmap. 
+                        Inclusief tool selectie en implementatie planning.
+                    </p>
+                </div>
 
-                    <div class="hex-item scroll-reveal">
-                        <div class="hex-shape"></div>
-                        <div class="hex-content">
-                            <div class="hex-icon">🚀</div>
-                            <h4 class="hex-title">Gevorderde AI Workshop</h4>
-                            <p class="hex-description">Diepgaande training in geavanceerde AI-technieken en implementaties</p>
-                        </div>
-                    </div>
-
-                    <div class="hex-item scroll-reveal">
-                        <div class="hex-shape"></div>
-                        <div class="hex-content">
-                            <div class="hex-icon">🤖</div>
-                            <h4 class="hex-title">AI Agents Maken</h4>
-                            <p class="hex-description">Hands-on training: bouw en implementeer uw eigen intelligente agents</p>
-                        </div>
-                    </div>
-
-                    <div class="hex-item scroll-reveal">
-                        <div class="hex-shape"></div>
-                        <div class="hex-content">
-                            <div class="hex-icon">🎯</div>
-                            <h4 class="hex-title">Maatwerk Training</h4>
-                            <p class="hex-description">Op maat gemaakte trainingen specifiek voor uw organisatie en doelen</p>
-                        </div>
-                    </div>
-
-                    <div class="hex-item scroll-reveal">
-                        <div class="hex-shape"></div>
-                        <div class="hex-content">
-                            <div class="hex-icon">📈</div>
-                            <h4 class="hex-title">AI Strategie Sessie</h4>
-                            <p class="hex-description">Ontwikkel een concrete AI-roadmap en implementatiestrategie</p>
-                        </div>
-                    </div>
+                <div class="process-step">
+                    <div class="step-number">3</div>
+                    <h3 class="step-title">Implementatie & Training</h3>
+                    <p class="step-description">
+                        We implementeren de AI-oplossingen en trainen uw team. 
+                        Inclusief change management en doorlopende ondersteuning.
+                    </p>
                 </div>
             </div>
         </section>
 
-        <!-- Floating Timeline Process -->
-        <section class="floating-timeline">
-            <div class="timeline-container">
-                <div class="section-header scroll-reveal">
-                    <h2 class="section-title text-gradient">Ons Proces</h2>
-                    <p class="section-subtitle">Van concept tot implementatie in 3 stappen</p>
-                </div>
-
-                <div class="timeline-track"></div>
-                
-                <div class="timeline-item scroll-reveal timeline-left">
-                    <div class="timeline-step-header">
-                        <div class="timeline-step-number ai-gradient">1</div>
-                        <h4 class="timeline-step-title">Intake & Voorbereiding</h4>
-                    </div>
-                    <p class="timeline-step-description">Behoeften in kaart brengen, doelgroep bepalen, agenda opstellen</p>
-                </div>
-
-                <div class="timeline-item scroll-reveal timeline-center">
-                    <div class="timeline-step-header">
-                        <div class="timeline-step-number purple-gradient">2</div>
-                        <h4 class="timeline-step-title">Workshop of Training</h4>
-                    </div>
-                    <p class="timeline-step-description">Interactieve sessie met praktijkvoorbeelden en hands-on oefeningen</p>
-                </div>
-
-                <div class="timeline-item scroll-reveal timeline-right">
-                    <div class="timeline-step-header">
-                        <div class="timeline-step-number success-gradient">3</div>
-                        <h4 class="timeline-step-title">Actieplan & Follow-up</h4>
-                    </div>
-                    <p class="timeline-step-description">Concrete vervolgstappen en optionele begeleiding bij implementatie</p>
-                </div>
-            </div>
-        </section>
-
-
-
-        <!-- CTA -->
-        <section class="final-cta">
+        <!-- CTA Section -->
+        <section class="cta-section">
             <div class="cta-container">
-                <div class="cta-content">
-                    <h2>Tijd voor uw AI-transformatie</h2>
-                    <p>Laat uw concurrenten niet voorbij gaan. Ontdek hoe AI uw bedrijf kan revolutioneren.</p>
-                    
-                    <div class="cta-actions">
-                        <a href="contact.html?service=ai-discovery" class="cta-primary ai-cta">
-                            <span>Start uw AI-reis vandaag</span>
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                                <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/>
-                            </svg>
-                        </a>
-                        
-                        <div class="cta-contact">
-                            <a href="tel:+31641289756" class="contact-link">
-                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                                    <path d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/>
-                                </svg>
-                                <span>+31 6 41289756</span>
-                            </a>
-                            <a href="mailto:m.jorna@decyberconsultant.nl" class="contact-link">
-                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                                    <path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
-                                </svg>
-                                <span>m.jorna@decyberconsultant.nl</span>
-                            </a>
-                        </div>
-                    </div>
-                    
-                    <div class="trust-badges">
-                        <div class="badge">
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                                <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/>
-                            </svg>
-                            <span>AI Pioniers</span>
-                        </div>
-                        <div class="badge">
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                                <path d="M12 2L2 7v10c0 5.55 3.84 9.74 9 10.5 5.16-.76 9-4.95 9-10.5V7l-10-5z"/>
-                            </svg>
-                            <span>Betrouwbaar</span>
-                        </div>
-                        <div class="badge">
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                                <path d="M9 11H5a2 2 0 0 0-2 2v3a2 2 0 0 0 2 2h4m6-6V9a2 2 0 0 0-2-2H9a2 2 0 0 0-2 2v2a2 2 0 0 0 2 2h4a2 2 0 0 0 2-2z"/>
-                            </svg>
-                            <span>Full-Service</span>
-                        </div>
-                    </div>
+                <h2 class="cta-title">Klaar om te starten met AI?</h2>
+                <p class="cta-subtitle">
+                    Neem contact op voor een vrijblijvend gesprek over de mogelijkheden voor uw bedrijf
+                </p>
+                
+                <a href="contact.html" class="cta-button">
+                    Plan een gratis kennismaking
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M5 12h14M12 5l7 7-7 7"/>
+                    </svg>
+                </a>
+
+                <div class="contact-info">
+                    <a href="tel:+31648512059" class="contact-link">
+                        <svg class="contact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <path d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/>
+                        </svg>
+                        <span>+31 6 48512059 (Lev)</span>
+                    </a>
+                    <a href="tel:+31641289756" class="contact-link">
+                        <svg class="contact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <path d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/>
+                        </svg>
+                        <span>+31 6 41289756 (Melle)</span>
+                    </a>
+                    <a href="mailto:info@decyberconsultant.nl" class="contact-link">
+                        <svg class="contact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                        </svg>
+                        <span>info@decyberconsultant.nl</span>
+                    </a>
                 </div>
             </div>
         </section>
-    </div>
-
-    <script>
-// REVOLUTIONARY AI PAGE CONTROLLER
-class AIPageController {
-    constructor() {
-        this.initAmbientBackground();
-        this.initModernScrollAnimations();
-        this.initInteractiveParticles();
-        this.initMagneticButtons();
-        this.initServiceCards();
-        this.initServiceActions();
-        this.initSmoothScrolling();
-        this.initNavigation();
-    }
-
-    // Modern Scroll Animations with Intersection Observer
-    initModernScrollAnimations() {
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -100px 0px'
-        };
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach((entry, index) => {
-                if (entry.isIntersecting) {
-                    setTimeout(() => {
-                        entry.target.classList.add('animate');
-                    }, index * 100);
-                }
-            });
-        }, observerOptions);
-
-        document.querySelectorAll('.scroll-reveal').forEach(el => {
-            observer.observe(el);
-        });
-    }
-
-    // Interactive Particle System
-    initInteractiveParticles() {
-        const particleField = document.getElementById('particleField');
-        if (!particleField) return;
-
-        const createParticle = () => {
-            const particle = document.createElement('div');
-            particle.className = 'particle';
-            particle.style.left = Math.random() * 100 + '%';
-            particle.style.animationDelay = Math.random() * 20 + 's';
-            particle.style.animationDuration = (Math.random() * 10 + 15) + 's';
-            particleField.appendChild(particle);
-
-            // Remove particle after animation
-            setTimeout(() => {
-                if (particleField.contains(particle)) {
-                    particleField.removeChild(particle);
-                }
-            }, 25000);
-        };
-
-        // Create initial particles
-        for (let i = 0; i < 20; i++) {
-            setTimeout(createParticle, i * 1000);
-        }
-
-        // Continuously create new particles
-        setInterval(createParticle, 2000);
-    }
-
-    // Magnetic Button Effects
-    initMagneticButtons() {
-        document.querySelectorAll('.magnetic-button').forEach(button => {
-            button.addEventListener('mousemove', (e) => {
-                const rect = button.getBoundingClientRect();
-                const x = e.clientX - rect.left - rect.width / 2;
-                const y = e.clientY - rect.top - rect.height / 2;
-                
-                const moveX = x * 0.1;
-                const moveY = y * 0.1;
-                
-                button.style.transform = `translate(${moveX}px, ${moveY}px)`;
-            });
-
-            button.addEventListener('mouseleave', () => {
-                button.style.transform = 'translate(0px, 0px)';
-            });
-        });
-    }
-
-    // Ambient Background Intelligence
-    initAmbientBackground() {
-        const canvas = document.getElementById('aiCanvas');
-        if (!canvas) return;
-
-        const ctx = canvas.getContext('2d');
-        let animationId;
-
-        const resizeCanvas = () => {
-            canvas.width = window.innerWidth;
-            canvas.height = window.innerHeight;
-        };
-
-        resizeCanvas();
-        window.addEventListener('resize', resizeCanvas);
-
-        // Create subtle neural network
-        const nodes = [];
-        const nodeCount = 25;
-
-        for (let i = 0; i < nodeCount; i++) {
-            nodes.push({
-                x: Math.random() * canvas.width,
-                y: Math.random() * canvas.height,
-                vx: (Math.random() - 0.5) * 0.3,
-                vy: (Math.random() - 0.5) * 0.3,
-                radius: Math.random() * 1.5 + 0.5,
-                pulse: Math.random() * Math.PI * 2,
-                pulseSpeed: 0.01 + Math.random() * 0.01
-            });
-        }
-
-        const animate = () => {
-            ctx.clearRect(0, 0, canvas.width, canvas.height);
-
-            nodes.forEach((node, i) => {
-                // Update position
-                node.x += node.vx;
-                node.y += node.vy;
-                node.pulse += node.pulseSpeed;
-
-                // Boundary collision
-                if (node.x < 0 || node.x > canvas.width) node.vx *= -1;
-                if (node.y < 0 || node.y > canvas.height) node.vy *= -1;
-
-                // Draw connections
-                nodes.forEach((otherNode, j) => {
-                    if (i < j) {
-                        const dx = node.x - otherNode.x;
-                        const dy = node.y - otherNode.y;
-                        const distance = Math.sqrt(dx * dx + dy * dy);
-
-                        if (distance < 100) {
-                            const opacity = (1 - distance / 100) * 0.05;
-                            ctx.beginPath();
-                            ctx.moveTo(node.x, node.y);
-                            ctx.lineTo(otherNode.x, otherNode.y);
-                            ctx.strokeStyle = `rgba(0, 122, 255, ${opacity})`;
-                            ctx.lineWidth = 0.5;
-                            ctx.stroke();
-                        }
-                    }
-                });
-
-                // Draw node
-                const pulseSize = Math.sin(node.pulse) * 0.3 + 1;
-                ctx.beginPath();
-                ctx.arc(node.x, node.y, node.radius * pulseSize, 0, Math.PI * 2);
-                ctx.fillStyle = `rgba(0, 122, 255, ${0.1 + Math.sin(node.pulse) * 0.05})`;
-                ctx.fill();
-            });
-
-            animationId = requestAnimationFrame(animate);
-        };
-
-        animate();
-
-        // Pause animation when tab not visible
-        document.addEventListener('visibilitychange', () => {
-            if (document.hidden) {
-                cancelAnimationFrame(animationId);
-            } else {
-                animate();
-            }
-        });
-    }
-
-    // Scroll Animations
-    initScrollAnimations() {
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    if (entry.target.classList.contains('service-card')) {
-                        entry.target.classList.add('animate');
-                    }
-                    if (entry.target.classList.contains('case-study')) {
-                        entry.target.classList.add('animate');
-                    }
-                    if (entry.target.classList.contains('process-step')) {
-                        entry.target.classList.add('animate');
-                    }
-                }
-            });
-        }, observerOptions);
-
-        // Observe all animatable elements
-        document.querySelectorAll('.service-card, .case-study, .process-step').forEach(el => {
-            observer.observe(el);
-        });
-
-        // Navbar scroll effect
-        let lastScrollY = window.scrollY;
-        window.addEventListener('scroll', () => {
-            const nav = document.querySelector('.ai-nav');
-            const currentScrollY = window.scrollY;
-
-            if (currentScrollY > 100) {
-                nav.style.background = 'rgba(255, 255, 255, 0.95)';
-                nav.style.boxShadow = '0 2px 20px rgba(0, 0, 0, 0.1)';
-            } else {
-                nav.style.background = 'rgba(255, 255, 255, 0.9)';
-                nav.style.boxShadow = 'none';
-            }
-
-            lastScrollY = currentScrollY;
-        });
-    }
-
-    // Service Card Interactions
-    initServiceCards() {
-        const serviceCards = document.querySelectorAll('.service-card');
-
-        serviceCards.forEach(card => {
-            // Click to contact
-            card.addEventListener('click', () => {
-                const serviceType = card.querySelector('h3').textContent.toLowerCase();
-                window.location.href = `contact.html?service=${encodeURIComponent(serviceType)}`;
-            });
-        });
-    }
-
-    // Service Actions
-    initServiceActions() {
-        // Handle service CTA buttons
-        document.querySelectorAll('.service-cta-btn').forEach(btn => {
-            btn.addEventListener('click', (e) => {
-                e.preventDefault();
-                const service = btn.dataset.service;
-                
-                // Scroll to playground with smooth animation
-                setTimeout(() => {
-                    const playground = document.getElementById('playground');
-                    if (playground) {
-                        playground.scrollIntoView({ 
-                            behavior: 'smooth',
-                            block: 'center'
-                        });
-                    }
-                }, 200);
-            });
-        });
-    }
-
-    // AI Playground placeholder
-    initPlayground() {
-        // Placeholder for playground functionality
-        console.log('AI Playground initialized');
-    }
-
-    // Interactive Demo placeholder
-    initDemo() {
-        // Placeholder for demo functionality
-        console.log('Demo initialized');
-    }
-
-    // Smooth Scrolling
-    initSmoothScrolling() {
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
-            });
-        });
-    }
-
-    // Navigation
-    initNavigation() {
-        // Add scroll offset for fixed nav
-        const adjustScrollForNav = () => {
-            const navHeight = document.querySelector('.ai-nav').offsetHeight;
-            const target = document.querySelector(window.location.hash);
-            if (target) {
-                window.scrollTo({
-                    top: target.offsetTop - navHeight - 20,
-                    behavior: 'smooth'
-                });
-            }
-        };
-
-        if (window.location.hash) {
-            setTimeout(adjustScrollForNav, 100);
-        }
-    }
-}
-
-// Initialize everything when DOM is ready
-document.addEventListener('DOMContentLoaded', () => {
-    new AIPageController();
-    console.log('AI Page Fully Loaded');
-});
-    </script>
+    </main>
 </body>
 </html>
