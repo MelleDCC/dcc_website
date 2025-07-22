@@ -11,6 +11,12 @@ This is a static website for De CyberConsultant (DCC), a Dutch consultancy firm 
 - Target market: MKB (Small and Medium-sized Enterprises)
 - Services: AI consulting/automation and Cybersecurity services
 - Language: All content in Dutch (nl)
+- Owners: Lev and Melle are both mede eigenaar (co-owners) who handle all aspects of the business
+
+**Key Services:**
+- AI Implementation and Automation
+- Cybersecurity Consulting
+- Phishing Simulation: AI-powered hyper-personalized and tailor-made phishing campaigns for security awareness training
 
 ## Development Commands
 
