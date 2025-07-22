@@ -4,134 +4,76 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-<<<<<<< HEAD
-This is a static website for De CyberConsultant (DCC), a Dutch consultancy firm specializing in AI and cybersecurity services. The site is built with vanilla HTML, CSS, and JavaScript - no frameworks or build tools are required.
+This is a static website for De CyberConsultant (DCC), a Dutch consultancy firm specializing in AI and cybersecurity services for SMEs (MKB). Built with pure HTML, CSS, and JavaScript without any frameworks or build tools.
 
-### About De CyberConsultant
+**Company Details:**
+- Active since 2021
+- Target market: MKB (Small and Medium-sized Enterprises)
+- Services: AI consulting/automation and Cybersecurity services
+- Language: All content in Dutch (nl)
 
-**Company**: De CyberConsultant  
-**Active since**: 2021  
-**Target market**: MKB (Small and Medium-sized Enterprises)
+## Development Commands
 
-**Services**:
-- **Cybersecurity**: Advies, trainingen, phishing simulaties, incident response planning
-- **AI**: Advies, workshops, software op maat (agentic systems, tools, procesoptimalisatie)
+**Local Development:**
+```bash
+# Option 1: Open files directly in browser
+open index.html
 
-**Website Purpose**: The website serves as an overview of services and contact information. It must convey professionalism and innovation through a super modern and smooth user experience.
+# Option 2: Simple HTTP server
+python -m http.server 8000
+```
 
-## Development & Deployment
-
-**Hosting**: The website runs on Vercel
-
-**Local Development**:
-- **To run locally**: Open any HTML file directly in a browser or use a simple HTTP server like `python -m http.server 8000`
-- **No build commands**: The site requires no compilation or bundling
-- **No tests**: No testing framework is configured
-- **No linting**: No linting tools are set up
+**No build, test, or lint commands** - this is a static site with no tooling setup.
 
 ## Code Architecture
 
 ### File Structure
-- `index.html` - Main landing page showcasing both AI and cyber services
-- `ai.html` - Detailed AI services page
-- `cyber.html` - Detailed cybersecurity services page  
-- `contact.html` - Contact form page
-- `style.css` - Single stylesheet containing all CSS (26KB)
-
-### Key Design Patterns
-1. **Modern CSS Effects**: The site uses glass morphism, backdrop filters, and CSS transforms extensively
-2. **Color Scheme**: Recently migrated to a light theme with white background (#FFFFFF) and dark text (#1D1D1F)
-3. **Navigation**: Fixed dashboard-style navigation with blur effects
-4. **Responsive Design**: Mobile-first approach using viewport meta tags
-5. **Page Transitions**: Vanilla JavaScript handles smooth scroll animations and page transitions
-
-### Language
-The website content is in Dutch (nl). All user-facing text should maintain this language consistency.
-
-### Styling Conventions
-- CSS variables are used for consistent theming
-- Hover effects use transform and transition properties
-- Glass effects achieved through backdrop-filter: blur()
-- Gradient overlays for visual depth
-- No external CSS frameworks - all styling is custom
-=======
-De CyberConsultant (DCC) website - a static HTML site showcasing AI and Cybersecurity consultancy services. The site features a split-screen design with immersive content sections for both service areas.
-
-## Tech Stack
-
-- Pure HTML/CSS/JavaScript (no framework or build tools)
-- Google Fonts: Inter and JetBrains Mono
-- No package manager or dependencies
-
-## Project Structure
-
 ```
 dcc_website/
-├── index.html      # Main landing page with split-screen AI/Cyber sections
-└── contact.html    # Contact page with team member information
+├── index.html          # Landing page with split-screen AI/Cyber sections
+├── ai.html            # AI services page (686 lines)
+├── cyber.html         # Cybersecurity services page (504 lines)
+├── contact.html       # Contact form page
+├── style.css          # Single comprehensive stylesheet (4,766 lines)
+└── *.png             # Company logo assets
 ```
 
-## Development Workflow
+### Key Design Patterns
 
-### Running the Site
-- Open HTML files directly in a browser
-- Use any static file server (e.g., `python -m http.server`)
-- No build or compilation step required
+**Split-Screen Landing:** The main page divides into AI (left) and Cybersecurity (right) sections, each expandable to full-screen immersive experiences.
 
-### Version Control
-```bash
-# Check status
-git status
+**Visual Effects:**
+- Canvas-based neural network animation for AI section
+- Matrix-style falling characters for Cyber section
+- Glass morphism effects with backdrop filters
+- Smooth CSS transitions and hover states
 
-# Stage changes
-git add .
+**Color Scheme:**
+- Background: White (#FFFFFF) 
+- Text: Dark (#1D1D1F)
+- AI accent: Blue themes
+- Cyber accent: Red/matrix green themes
 
-# Commit with descriptive message
-git commit -m "Description of changes"
+### Technology Stack
+- **Pure HTML5/CSS3/JavaScript** - no frameworks
+- **Google Fonts:** Inter, JetBrains Mono, Outfit
+- **Canvas API** for animations
+- **Modern CSS:** backdrop-filter, transforms, variables
+- **Responsive design** with 768px mobile breakpoint
 
-# Push to GitHub
-git push origin main
-```
+### Content Guidelines
+- All text must be in Dutch
+- Professional tone targeting business decision makers
+- Focus on MKB/SME market segment
+- Emphasize trust, expertise, and innovation
 
-Repository: https://github.com/MelleDCC/dcc_website.git
+### Styling Conventions
+- Single CSS file with all styles
+- CSS custom properties for consistent theming
+- Embedded JavaScript directly in HTML files
+- Glass morphism achieved through backdrop-filter: blur()
+- Mobile-first responsive approach
 
-## Code Architecture
+## Deployment
 
-### Design System
-- **Color Palette**:
-  - AI Section: #007aff (blue)
-  - Cyber Section: #ff4757 (red)
-  - Anthracite: #36454F
-  - Background: #000033 (dark), white (light)
-
-### Key Components
-
-1. **Split-Screen Landing** (`index.html`):
-   - Left: AI services with animated chat interface
-   - Right: Cyber services with terminal-style UI
-   - Both sections expand to immersive full-screen views
-
-2. **Interactive Elements**:
-   - CSS transitions for hover effects
-   - JavaScript for section navigation
-   - Typewriter effects for terminal UI
-   - Animated metrics and progress bars
-
-3. **Responsive Design**:
-   - Mobile breakpoint at 768px
-   - Vertical stacking on small screens
-   - Touch-friendly interaction zones
-
-### JavaScript Patterns
-- Event listeners for navigation between sections
-- Animation controls for typewriter effects
-- State management via CSS classes (active/inactive states)
-
-## Important Considerations
-
-- All styles are inline within HTML files
-- No external CSS or JS files to maintain
-- Images should be optimized for web performance
-- Ensure consistent color usage across pages
-- Test animations on various devices for performance
->>>>>>> a46f6ffde9e8d00de941ad22b844c8dcd00f9a17
+Hosted on **Vercel** as a static site - no server-side processing required.

@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="ai-ultra-page">
+    <div class="main-container">
         <!-- Ambient Intelligence Layer -->
         <div class="ambient-intelligence">
             <canvas id="aiCanvas"></canvas>
@@ -114,110 +114,112 @@
         </section>
 
         <!-- Apple-style Services Section -->
-        <section style="padding: 6rem 2rem 8rem 2rem; background: #FBFBFD;">
-            <div style="max-width: 1200px; margin: 0 auto;">
-                <div class="scroll-reveal" style="text-align: center; margin-bottom: 4rem;">
-                    <h2 class="display-medium" style="margin-bottom: 1rem;">Onze AI Diensten</h2>
-                    <p class="body-large" style="color: #86868B; max-width: 600px; margin: 0 auto;">Praktische oplossingen die uw organisatie vooruit helpen</p>
+        <section class="services-section">
+            <div class="services-container">
+                <div class="scroll-reveal section-header">
+                    <h2 class="section-title">Onze AI Diensten</h2>
+                    <p class="section-subtitle">Praktische oplossingen die uw organisatie vooruit helpen</p>
                 </div>
 
                 <div class="bento-grid">
                     <!-- Main Showcase -->
                     <div class="bento-item large scroll-reveal">
-                        <div style="margin-bottom: 2rem;">
-                            <div style="width: 64px; height: 64px; background: #E7F3FF; border-radius: 18px; display: flex; align-items: center; justify-content: center; margin-bottom: 1.5rem;">
+                        <div class="service-header">
+                            <div class="service-icon ai-icon-bg">
                                 <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#007AFF" stroke-width="1.5">
                                     <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/>
                                 </svg>
                             </div>
-                            <h3 class="headline" style="margin-bottom: 0.5rem;">AI Agents Op Maat</h3>
-                            <p class="caption" style="margin-bottom: 1.5rem;">Automatiseer en optimaliseer uw bedrijfsprocessen</p>
+                            <h3 class="service-title">AI Agents Op Maat</h3>
+                            <p class="service-subtitle">Automatiseer en optimaliseer uw bedrijfsprocessen</p>
                         </div>
                         
-                        <div style="display: grid; grid-template-columns: 2fr 1fr; gap: 2rem; align-items: start;">
-                            <div>
-                                <p class="body" style="margin-bottom: 1rem; color: #1d1d1f;">Onze maatwerk AI agents revolutioneren uw bedrijfsvoering door complexe processen volledig te automatiseren en optimaliseren. Van repetitieve administratieve taken tot geavanceerde beslissingsondersteunende systemen.</p>
+                        <div class="service-content-grid">
+                            <div class="service-details">
+                                <p class="service-description">Onze maatwerk AI agents revolutioneren uw bedrijfsvoering door complexe processen volledig te automatiseren en optimaliseren. Van repetitieve administratieve taken tot geavanceerde beslissingsondersteunende systemen.</p>
                                 
-                                <h5 style="font-weight: 600; color: #1d1d1f; margin: 1rem 0 0.5rem 0;">Procesautomatisering op maat:</h5>
-                                <ul style="list-style: none; padding: 0; margin: 0 0 1rem 0;">
-                                    <li style="padding: 4px 0; display: flex; align-items: center; gap: 12px; font-size: 14px; color: #86868B;">
-                                        <span style="width: 6px; height: 6px; background: #007AFF; border-radius: 50%;"></span>
+                                <h5 class="feature-title">Procesautomatisering op maat:</h5>
+                                <ul class="feature-list">
+                                    <li class="feature-item">
+                                        <span class="feature-dot ai-dot"></span>
                                         Klantenservice automatisering met intelligente chatbots
                                     </li>
-                                    <li style="padding: 4px 0; display: flex; align-items: center; gap: 12px; font-size: 14px; color: #86868B;">
-                                        <span style="width: 6px; height: 6px; background: #007AFF; border-radius: 50%;"></span>
+                                    <li class="feature-item">
+                                        <span class="feature-dot ai-dot"></span>
                                         Document processing en data-extractie
                                     </li>
-                                    <li style="padding: 4px 0; display: flex; align-items: center; gap: 12px; font-size: 14px; color: #86868B;">
-                                        <span style="width: 6px; height: 6px; background: #007AFF; border-radius: 50%;"></span>
+                                    <li class="feature-item">
+                                        <span class="feature-dot ai-dot"></span>
                                         Workflow optimalisatie en taakbeheer
                                     </li>
-                                    <li style="padding: 4px 0; display: flex; align-items: center; gap: 12px; font-size: 14px; color: #86868B;">
-                                        <span style="width: 6px; height: 6px; background: #007AFF; border-radius: 50%;"></span>
+                                    <li class="feature-item">
+                                        <span class="feature-dot ai-dot"></span>
                                         Intelligente planning en resource allocatie
                                     </li>
                                 </ul>
                                 
-                                <h5 style="font-weight: 600; color: #1d1d1f; margin: 0.5rem 0;">Voordelen voor uw organisatie:</h5>
-                                <ul style="list-style: none; padding: 0; margin: 0;">
-                                    <li style="padding: 4px 0; display: flex; align-items: center; gap: 12px; font-size: 14px; color: #86868B;">
-                                        <span style="width: 6px; height: 6px; background: #34C759; border-radius: 50%;"></span>
+                                <h5 class="feature-title">Voordelen voor uw organisatie:</h5>
+                                <ul class="feature-list">
+                                    <li class="feature-item">
+                                        <span class="feature-dot success-dot"></span>
                                         Aanzienlijke tijdsbesparing op routine taken
                                     </li>
-                                    <li style="padding: 4px 0; display: flex; align-items: center; gap: 12px; font-size: 14px; color: #86868B;">
-                                        <span style="width: 6px; height: 6px; background: #34C759; border-radius: 50%;"></span>
+                                    <li class="feature-item">
+                                        <span class="feature-dot success-dot"></span>
                                         Continue beschikbaarheid en consistente kwaliteit
                                     </li>
-                                    <li style="padding: 4px 0; display: flex; align-items: center; gap: 12px; font-size: 14px; color: #86868B;">
-                                        <span style="width: 6px; height: 6px; background: #34C759; border-radius: 50%;"></span>
+                                    <li class="feature-item">
+                                        <span class="feature-dot success-dot"></span>
                                         Schaalbaarheid zonder extra personeel
                                     </li>
                                 </ul>
                             </div>
-                            <div style="background: #FFFFFF; border-radius: 16px; padding: 24px; text-align: center; border: 1px solid rgba(0,0,0,0.04);">
-                                <div style="font-size: 32px; margin-bottom: 8px;"></div>
-                                <div style="font-size: 17px; font-weight: 600; color: #1d1d1f; margin-bottom: 4px;">AI Agent</div>
-                                <div style="font-size: 14px; color: #86868B;">Op maat gemaakt</div>
+                            <div class="service-showcase">
+                                <div class="showcase-content">
+                                    <div class="showcase-icon"></div>
+                                    <div class="showcase-title">AI Agent</div>
+                                    <div class="showcase-subtitle">Op maat gemaakt</div>
+                                </div>
                             </div>
                         </div>
                     </div>
 
                     <!-- Advanced Training -->
                     <div class="bento-item medium scroll-reveal">
-                        <div style="width: 56px; height: 56px; background: #F3E8FF; border-radius: 16px; display: flex; align-items: center; justify-content: center; margin-bottom: 1.5rem;">
+                        <div class="service-icon purple-icon-bg">
                             <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#8B5CF6" stroke-width="1.5">
                                 <path d="M12 20a8 8 0 1 0 0-16 8 8 0 0 0 0 16ZM12 6v6l4 2"/>
                             </svg>
                         </div>
-                        <h4 class="headline" style="font-size: 20px; margin-bottom: 0.5rem;">Geavanceerde Training</h4>
-                        <p class="body" style="color: #86868B; font-size: 14px;">Voor teams die zelf AI agents willen bouwen</p>
+                        <h4 class="service-card-title">Geavanceerde Training</h4>
+                        <p class="service-card-description">Voor teams die zelf AI agents willen bouwen</p>
                     </div>
 
                     <!-- Custom Solutions -->
                     <div class="bento-item medium scroll-reveal">
-                        <div style="width: 56px; height: 56px; background: #FFF0F6; border-radius: 16px; display: flex; align-items: center; justify-content: center; margin-bottom: 1.5rem;">
+                        <div class="service-icon pink-icon-bg">
                             <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#EC4899" stroke-width="1.5">
                                 <path d="M12 20a8 8 0 1 0 0-16 8 8 0 0 0 0 16ZM3 10h4m6-6v4m6 2h4M7 19l3-3m6-6l3-3"/>
                             </svg>
                         </div>
-                        <h4 class="headline" style="font-size: 20px; margin-bottom: 0.5rem;">AI Maatwerk</h4>
-                        <p class="body" style="color: #86868B; font-size: 14px;">Custom implementaties voor uw processen</p>
+                        <h4 class="service-card-title">AI Maatwerk</h4>
+                        <p class="service-card-description">Custom implementaties voor uw processen</p>
                     </div>
 
                     <!-- Demo -->
                     <div class="bento-item small scroll-reveal">
-                        <div style="text-align: center; height: 100%; display: flex; flex-direction: column; justify-content: center;">
-                            <div style="font-size: 40px; margin-bottom: 8px;"></div>
-                            <h5 style="font-size: 16px; font-weight: 600; margin-bottom: 4px; color: #1d1d1f;">Live Demo</h5>
-                            <p style="font-size: 12px; color: #86868B; margin: 0;">Interactieve voorbeelden</p>
+                        <div class="stat-card">
+                            <div class="stat-icon"></div>
+                            <h5 class="stat-title">Live Demo</h5>
+                            <p class="stat-description">Interactieve voorbeelden</p>
                         </div>
                     </div>
 
                     <!-- Since -->
                     <div class="bento-item small scroll-reveal">
-                        <div style="text-align: center; height: 100%; display: flex; flex-direction: column; justify-content: center;">
-                            <div style="font-size: 28px; font-weight: 600; color: #007AFF; margin-bottom: 4px;">2021</div>
-                            <p style="font-size: 12px; color: #86868B; margin: 0;">Actief sinds</p>
+                        <div class="stat-card">
+                            <div class="stat-value ai-blue">2021</div>
+                            <p class="stat-description">Actief sinds</p>
                         </div>
                     </div>
                 </div>
@@ -225,9 +227,9 @@
         </section>
 
         <!-- Hexagonal Workshop Formats -->
-        <section style="padding: 6rem 0 8rem 0; background: linear-gradient(135deg, #F8FAFC 0%, #E7F3FF 100%);">
-            <div style="max-width: 1400px; margin: 0 auto; padding: 0 2rem;">
-                <div class="section-header scroll-reveal" style="text-align: center; margin-bottom: 4rem;">
+        <section class="workshop-section">
+            <div class="workshop-container">
+                <div class="section-header scroll-reveal">
                     <h2 class="section-title text-gradient">Workshop Formats</h2>
                     <p class="section-subtitle">Innovatieve formats voor maximale impact</p>
                 </div>
@@ -236,45 +238,45 @@
                     <div class="hex-item scroll-reveal">
                         <div class="hex-shape"></div>
                         <div class="hex-content">
-                            <div style="font-size: 2rem; margin-bottom: 1rem;"></div>
-                            <h4 style="margin-bottom: 0.5rem;">Basis Workshop AI</h4>
-                            <p style="font-size: 0.9rem; margin: 0;">Introductie tot AI concepten en mogelijkheden voor uw organisatie</p>
+                            <div class="hex-icon"></div>
+                            <h4 class="hex-title">Basis Workshop AI</h4>
+                            <p class="hex-description">Introductie tot AI concepten en mogelijkheden voor uw organisatie</p>
                         </div>
                     </div>
 
                     <div class="hex-item scroll-reveal">
                         <div class="hex-shape"></div>
                         <div class="hex-content">
-                            <div style="font-size: 2rem; margin-bottom: 1rem;"></div>
-                            <h4 style="margin-bottom: 0.5rem;">Geavanceerde AI Tools Workshop</h4>
-                            <p style="font-size: 0.9rem; margin: 0;">Hands-on training met professionele AI tools en platformen</p>
+                            <div class="hex-icon"></div>
+                            <h4 class="hex-title">Geavanceerde AI Tools Workshop</h4>
+                            <p class="hex-description">Hands-on training met professionele AI tools en platformen</p>
                         </div>
                     </div>
 
                     <div class="hex-item scroll-reveal">
                         <div class="hex-shape"></div>
                         <div class="hex-content">
-                            <div style="font-size: 2rem; margin-bottom: 1rem;"></div>
-                            <h4 style="margin-bottom: 0.5rem;">AI Agents Workshop</h4>
-                            <p style="font-size: 0.9rem; margin: 0;">Leer intelligent agents bouwen en implementeren</p>
+                            <div class="hex-icon"></div>
+                            <h4 class="hex-title">AI Agents Workshop</h4>
+                            <p class="hex-description">Leer intelligent agents bouwen en implementeren</p>
                         </div>
                     </div>
 
                     <div class="hex-item scroll-reveal">
                         <div class="hex-shape"></div>
                         <div class="hex-content">
-                            <div style="font-size: 2rem; margin-bottom: 1rem;"></div>
-                            <h4 style="margin-bottom: 0.5rem;">Maatwerk Training</h4>
-                            <p style="font-size: 0.9rem; margin: 0;">Specifieke training aangepast aan uw sector en behoeften</p>
+                            <div class="hex-icon"></div>
+                            <h4 class="hex-title">Maatwerk Training</h4>
+                            <p class="hex-description">Specifieke training aangepast aan uw sector en behoeften</p>
                         </div>
                     </div>
 
                     <div class="hex-item scroll-reveal">
                         <div class="hex-shape"></div>
                         <div class="hex-content">
-                            <div style="font-size: 2rem; margin-bottom: 1rem;"></div>
-                            <h4 style="margin-bottom: 0.5rem;">Strategie Sessie</h4>
-                            <p style="font-size: 0.9rem; margin: 0;">AI roadmap ontwikkeling voor uw organisatie</p>
+                            <div class="hex-icon"></div>
+                            <h4 class="hex-title">Strategie Sessie</h4>
+                            <p class="hex-description">AI roadmap ontwikkeling voor uw organisatie</p>
                         </div>
                     </div>
                 </div>
@@ -282,37 +284,37 @@
         </section>
 
         <!-- Floating Timeline Process -->
-        <section class="floating-timeline" style="padding: 6rem 0 8rem 0;">
-            <div style="max-width: 1400px; margin: 0 auto; padding: 0 2rem;">
-                <div class="section-header scroll-reveal" style="text-align: center; margin-bottom: 4rem;">
+        <section class="floating-timeline">
+            <div class="timeline-container">
+                <div class="section-header scroll-reveal">
                     <h2 class="section-title text-gradient">Ons Proces</h2>
                     <p class="section-subtitle">Van concept tot implementatie in 3 stappen</p>
                 </div>
 
                 <div class="timeline-track"></div>
                 
-                <div class="timeline-item scroll-reveal" style="left: 10%;">
-                    <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem;">
-                        <div style="width: 40px; height: 40px; background: linear-gradient(135deg, #007AFF, #5856D6); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-weight: 600;">1</div>
-                        <h4 style="margin: 0; font-size: 1.25rem;">Intake & Voorbereiding</h4>
+                <div class="timeline-item scroll-reveal timeline-left">
+                    <div class="timeline-step-header">
+                        <div class="timeline-step-number ai-gradient">1</div>
+                        <h4 class="timeline-step-title">Intake & Voorbereiding</h4>
                     </div>
-                    <p style="color: #666; margin: 0;">Behoeften in kaart brengen, doelgroep bepalen, agenda opstellen</p>
+                    <p class="timeline-step-description">Behoeften in kaart brengen, doelgroep bepalen, agenda opstellen</p>
                 </div>
 
-                <div class="timeline-item scroll-reveal" style="left: 40%;">
-                    <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem;">
-                        <div style="width: 40px; height: 40px; background: linear-gradient(135deg, #5856D6, #FF2D92); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-weight: 600;">2</div>
-                        <h4 style="margin: 0; font-size: 1.25rem;">Workshop of Training</h4>
+                <div class="timeline-item scroll-reveal timeline-center">
+                    <div class="timeline-step-header">
+                        <div class="timeline-step-number purple-gradient">2</div>
+                        <h4 class="timeline-step-title">Workshop of Training</h4>
                     </div>
-                    <p style="color: #666; margin: 0;">Interactieve sessie met praktijkvoorbeelden en hands-on oefeningen</p>
+                    <p class="timeline-step-description">Interactieve sessie met praktijkvoorbeelden en hands-on oefeningen</p>
                 </div>
 
-                <div class="timeline-item scroll-reveal" style="left: 70%;">
-                    <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem;">
-                        <div style="width: 40px; height: 40px; background: linear-gradient(135deg, #FF2D92, #34C759); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-weight: 600;">3</div>
-                        <h4 style="margin: 0; font-size: 1.25rem;">Actieplan & Follow-up</h4>
+                <div class="timeline-item scroll-reveal timeline-right">
+                    <div class="timeline-step-header">
+                        <div class="timeline-step-number success-gradient">3</div>
+                        <h4 class="timeline-step-title">Actieplan & Follow-up</h4>
                     </div>
-                    <p style="color: #666; margin: 0;">Concrete vervolgstappen en optionele begeleiding bij implementatie</p>
+                    <p class="timeline-step-description">Concrete vervolgstappen en optionele begeleiding bij implementatie</p>
                 </div>
             </div>
         </section>
