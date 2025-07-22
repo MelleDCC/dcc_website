@@ -8,13 +8,17 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="contact-ultra-page">
-        <!-- Ambient Background -->
-        <div class="ambient-contact">
-            <div class="contact-grid-bg">
-                <div class="grid-line"></div>
-                <div class="grid-line"></div>
-                <div class="grid-line"></div>
+    <div class="main-container">
+        <!-- Subtle gradient overlay -->
+        <div class="gradient-overlay"></div>
+        
+        <!-- Ambient Intelligence Layer -->
+        <div class="ambient-intelligence">
+            <canvas id="contactCanvas"></canvas>
+            <div class="light-rays">
+                <div class="ray" style="--delay: 0s"></div>
+                <div class="ray" style="--delay: 1s"></div>
+                <div class="ray" style="--delay: 2s"></div>
             </div>
         </div>
 
@@ -111,7 +115,7 @@
                                 </div>
                             </div>
                             <div style="background: #FFFFFF; border-radius: 16px; padding: 24px; text-align: center; border: 1px solid rgba(0,0,0,0.04);">
-                                <div style="font-size: 32px; margin-bottom: 8px;">🚀</div>
+                                <div style="font-size: 32px; margin-bottom: 8px;"></div>
                                 <div style="font-size: 17px; font-weight: 600; color: #1d1d1f; margin-bottom: 4px;">AI & Cyber Expert</div>
                                 <div style="font-size: 14px; color: #86868B;">Volledige expertise</div>
                             </div>
@@ -156,7 +160,7 @@
                                 </div>
                             </div>
                             <div style="background: #FFFFFF; border-radius: 16px; padding: 24px; text-align: center; border: 1px solid rgba(0,0,0,0.04);">
-                                <div style="font-size: 32px; margin-bottom: 8px;">🛡️</div>
+                                <div style="font-size: 32px; margin-bottom: 8px;"></div>
                                 <div style="font-size: 17px; font-weight: 600; color: #1d1d1f; margin-bottom: 4px;">Cyber & AI Expert</div>
                                 <div style="font-size: 14px; color: #86868B;">Complete ondersteuning</div>
                             </div>
@@ -188,7 +192,7 @@
                     <!-- Direct Contact -->
                     <div class="bento-item small scroll-reveal">
                         <div style="text-align: center; height: 100%; display: flex; flex-direction: column; justify-content: center;">
-                            <div style="font-size: 32px; margin-bottom: 8px;">📞</div>
+                            <div style="font-size: 32px; margin-bottom: 8px;"></div>
                             <div style="font-size: 16px; font-weight: 600; margin-bottom: 4px; color: #1d1d1f;">Direct Contact</div>
                             <p style="font-size: 12px; color: #86868B; margin: 0;">Bel of mail direct</p>
                         </div>
@@ -258,7 +262,7 @@
                 const submitBtn = document.querySelector('.submit-btn');
                 const originalContent = submitBtn.innerHTML;
                 
-                submitBtn.innerHTML = '<span>✓ Bericht verzonden!</span>';
+                submitBtn.innerHTML = '<span>Bericht verzonden!</span>';
                 submitBtn.style.background = '#34C759';
                 
                 setTimeout(() => {
